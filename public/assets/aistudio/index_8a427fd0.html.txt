@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXON Legal | Conocimiento, Seguridad, Confianza, Justicia</title>
+    <meta name="description" content="Firma Axon Legal, división de AXON Global S.A.S. especializada en insolvencia, justicia penal militar, derecho disciplinario, civil y de familia. Respaldo jurídico de alto nivel en Colombia.">
+    
+    <!-- Tipografía: Inter (Cuerpo) y Montserrat (Títulos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (Configuración Integrada) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        axon: {
+                            navy: '#0B132B',      // Azul marino profundo
+                            slate: '#1C2541',     // Gris pizarra oscuro
+                            blue: '#3A506B',      // Azul corporativo secundario
+                            gold: '#D4AF37',      // Dorado institucional
+                            silver: '#E5E7EB',    // Plata
+                            light: '#F8F9FA'      // Fondo claro
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Marca de agua de fondo estática y sutil */
+        .watermark-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('marca de agua axon legal_2.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 50%;
+            opacity: 0.03; 
+            filter: grayscale(100%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Personalización del input de archivos */
+        input[type="file"]::file-selector-button {
+            background-color: #0B132B;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border: 1px solid #0B132B;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            margin-right: 1rem;
+        }
+        input[type="file"]::file-selector-button:hover {
+            background-color: #D4AF37;
+            color: #0B132B;
+            border-color: #D4AF37;
+        }
+
+        /* Estilos personalizados para la cuadrícula de la biblioteca */
+        .book-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.4); 
+        }
+
+        /* Lógica visual de pestañas QR */
+        .qr-tab-content { display: none; }
+        .qr-tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-axon-light font-sans text-axon-navy relative antialiased flex flex-col min-h-screen">
+
+    <div class="watermark-bg"></div>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/573180158629" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full shadow-2xl hover:bg-[#128C7E] z-50 transition-transform duration-300 hover:scale-110 flex items-center justify-center group">
+        <i class="fab fa-whatsapp text-3xl"></i>
+        <span class="absolute right-16 bg-white text-axon-navy text-sm font-bold px-3 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-gray-100">
+            Asesoría Jurídica Inmediata
+        </span>
+    </a>
+
+    <!-- Header / Navbar Corporativo -->
+    <header class="fixed w-full z-40 bg-white/95 backdrop-blur-md shadow-md border-b border-gray-200 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                
+                <!-- Jerarquía de Logos -->
+                <div class="flex items-center space-x-4 md:space-x-6">
+                    <div class="flex items-center flex-col md:flex-row group cursor-default">
+                        <img src="image_4e8f77.png" alt="Logo de AXON Global" class="h-10 md:h-12 w-auto object-contain rounded-full shadow-sm transition-transform duration-300 group-hover:scale-105">
+                        <div class="hidden lg:flex flex-col ml-2">
+                            <span class="text-[0.65rem] font-heading font-bold text-gray-500 uppercase tracking-widest leading-none">Matriz</span>
+                            <span class="text-xs font-heading font-bold text-axon-slate uppercase tracking-wider leading-tight">AXON Global</span>
+                        </div>
+                    </div>
+                    
+                    <div class="h-10 w-px bg-gray-300"></div>
+
+                    <div class="flex items-center group cursor-default">
+                        <img src="image_4da6c0.png" alt="Logo de Axon Legal" class="h-12 md:h-14 w-auto object-contain rounded-full shadow-md transition-transform duration-300 group-hover:scale-105">
+                        <div class="ml-3 hidden sm:block">
+                            <span class="block text-xl font-heading font-extrabold text-axon-navy leading-none">AXON LEGAL</span>
+                            <span class="block text-[0.65rem] text-axon-gold font-bold tracking-widest mt-1">CONOCIMIENTO • SEGURIDAD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navegación Desktop -->
+                <nav class="hidden lg:flex items-center space-x-6 font-medium">
+                    <a href="#inicio" class="text-axon-slate hover:text-axon-gold transition duration-300 text-sm tracking-wide">Inicio</a>
+                    <a href="#trayectoria" class="text-axon-slate hover:text-axon-gold transition duration-300 text-sm tracking-wide">Experiencia</a>
+                    <a href="#servicios" class="text-axon-slate hover:text-axon-gold transition duration-300 text-sm tracking-wide">Especialidades</a>
+                    <a href="#biblioteca" class="text-axon-slate hover:text-axon-gold transition duration-300 text-sm tracking-wide">Biblioteca</a>
+                    <a href="#donaciones" class="text-axon-slate hover:text-axon-gold transition duration-300 text-sm tracking-wide">Aportes</a>
+                    <a href="#contacto" class="bg-axon-navy text-white px-5 py-2.5 rounded-md text-sm font-bold shadow-lg hover:bg-axon-gold hover:text-axon-navy transition duration-300 border border-transparent hover:border-axon-gold">Consultar Caso</a>
+                </nav>
+
+                <!-- Botón Menú Móvil -->
+                <button id="mobile-menu-btn" aria-label="Abrir menú" class="lg:hidden text-axon-navy p-2 focus:outline-none hover:text-axon-gold transition">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full left-0">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col text-center">
+                <a href="#inicio" class="block py-3 text-axon-navy font-medium hover:bg-gray-50 rounded-lg">Inicio</a>
+                <a href="#trayectoria" class="block py-3 text-axon-navy font-medium hover:bg-gray-50 rounded-lg">Experiencia</a>
+                <a href="#servicios" class="block py-3 text-axon-navy font-medium hover:bg-gray-50 rounded-lg">Especialidades</a>
+                <a href="#biblioteca" class="block py-3 text-axon-navy font-medium hover:bg-gray-50 rounded-lg">Biblioteca de Códigos</a>
+                <a href="#donaciones" class="block py-3 text-axon-navy font-medium hover:bg-gray-50 rounded-lg">Aportes Voluntarios</a>
+                <a href="#contacto" class="block py-3 mt-2 bg-axon-gold text-axon-navy font-bold rounded-lg shadow-md">Solicitar Valoración</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <!-- Sección Hero -->
+        <section id="inicio" class="pt-32 pb-16 md:pt-40 md:pb-24 px-4 flex items-center min-h-[85vh]">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+                <div class="space-y-8 text-center lg:text-left">
+                    <div class="inline-block bg-axon-navy text-axon-gold px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-2 shadow-sm border border-axon-gold/20">
+                        Respaldo, Estrategia y Resultados
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-axon-navy leading-tight">
+                        Protegemos su patrimonio, su carrera y su tranquilidad.
+                    </h1>
+                    <p class="text-lg md:text-xl text-axon-slate font-light leading-relaxed">
+                        Defensa técnica, estratégica y contundente. En Axon Legal somos aliados inquebrantables de los ciudadanos y de los miembros de la Fuerza Pública de Colombia, garantizando el blindaje jurídico que usted y su familia merecen.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start pt-4">
+                        <a href="#contacto" class="bg-axon-navy text-white px-8 py-4 rounded-md font-bold shadow-xl hover:bg-axon-slate transition duration-300 text-center flex items-center justify-center">
+                            Iniciar mi Defensa <i class="fas fa-shield-alt ml-3"></i>
+                        </a>
+                        <a href="#servicios" class="bg-transparent border-2 border-axon-navy text-axon-navy px-8 py-4 rounded-md font-bold hover:bg-axon-navy hover:text-white transition duration-300 text-center">
+                            Ver Áreas de Práctica
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:flex justify-center relative">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-axon-gold rounded-full opacity-10 blur-2xl transform scale-110"></div>
+                        <img src="imagen encabezado axon global.jpg" alt="AXON Global Respaldo Corporativo" class="w-full max-w-md object-contain filter contrast-125 drop-shadow-2xl rounded-2xl relative z-10">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Trayectoria y Resultados -->
+        <section id="trayectoria" class="py-12 bg-axon-navy text-white relative border-y-4 border-axon-gold shadow-inner">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid md:grid-cols-2 gap-8 divide-y md:divide-y-0 md:divide-x divide-axon-gold/30">
+                    
+                    <div class="flex flex-col items-center text-center p-6 space-y-4">
+                        <div class="w-16 h-16 bg-axon-gold/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-medal text-4xl text-axon-gold"></i>
+                        </div>
+                        <h3 class="text-3xl font-heading font-extrabold text-white">+15 Años</h3>
+                        <p class="text-axon-silver text-sm uppercase tracking-wider font-semibold">De Trayectoria Especializada</p>
+                        <p class="text-gray-300 font-light mt-2 max-w-sm">
+                            Los profesionales de Axon Legal somos verdaderos expertos en el funcionamiento interno, doctrina y normatividad de la <strong>Fuerza Pública Colombiana</strong>. Entendemos su servicio mejor que nadie.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col items-center text-center p-6 space-y-4">
+                        <div class="w-16 h-16 bg-axon-gold/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-chart-line text-4xl text-axon-gold"></i>
+                        </div>
+                        <h3 class="text-3xl font-heading font-extrabold text-white">+100 Casos Exitosos</h3>
+                        <p class="text-axon-silver text-sm uppercase tracking-wider font-semibold">De Protección Patrimonial</p>
+                        <p class="text-gray-300 font-light mt-2 max-w-sm">
+                            Resultados probados en la <strong>reinclusión al sistema financiero</strong> y blindaje de activos mediante la aplicación experta de la Ley de Insolvencia en persona natural no comerciante.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Especialidades Jurídicas -->
+        <section id="servicios" class="py-24 bg-white relative">
+            <div class="absolute inset-0 bg-gray-50 opacity-50" style="background-image: radial-gradient(#E5E7EB 1px, transparent 1px); background-size: 20px 20px;"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-axon-navy">ESPECIALIDADES JURÍDICAS</h2>
+                    <div class="h-1.5 w-24 bg-axon-gold mx-auto mt-6 mb-6 rounded-full"></div>
+                    <p class="text-axon-slate text-lg leading-relaxed">Asesoría diseñada con absoluto rigor corporativo. La misión de Axon Legal es garantizar soluciones jurídicas precisas frente a las realidades del ámbito civil y militar.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-10">
+                    
+                    <div class="bg-white p-10 rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl hover:border-axon-gold transition-all duration-300 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-16 h-16 bg-axon-navy rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-axon-gold transition-all duration-300 shadow-md">
+                                <i class="fas fa-file-invoice-dollar text-3xl text-axon-gold group-hover:text-axon-navy transition-colors"></i>
+                            </div>
+                            <h3 class="text-2xl font-heading font-bold text-axon-navy mb-4">Insolvencia Persona Natural</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6 font-light">
+                                ¿El sobreendeudamiento amenaza su paz mental y la de los suyos? Con nuestro récord de <strong>más de 100 casos exitosos</strong>, le brindamos acompañamiento estratégico para acogerse a la ley de insolvencia para no comerciantes. En Axon Legal protegemos su patrimonio, suspendemos libranzas/embargos y negociamos para que recupere su libertad financiera.
+                            </p>
+                        </div>
+                        <a href="#contacto" class="text-axon-navy font-bold text-sm uppercase tracking-wider group-hover:text-axon-gold transition flex items-center mt-auto pt-4 border-t border-gray-100">
+                            Recuperar mi tranquilidad <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+
+                    <div class="bg-white p-10 rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl hover:border-axon-gold transition-all duration-300 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-16 h-16 bg-axon-navy rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-axon-gold transition-all duration-300 shadow-md">
+                                <i class="fas fa-balance-scale text-3xl text-axon-gold group-hover:text-axon-navy transition-colors"></i>
+                            </div>
+                            <h3 class="text-2xl font-heading font-bold text-axon-navy mb-4">Justicia Penal Militar</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6 font-light">
+                                Comprendemos la complejidad y el honor del servicio gracias a nuestros <strong>15 años de experiencia inmersa en la Fuerza Pública</strong>. Ofrecemos defensa técnica para miembros involucrados en procesos ante la jurisdicción penal militar colombiana, garantizando el debido proceso y la protección de su carrera con el respaldo de Axon Legal.
+                            </p>
+                        </div>
+                        <a href="#contacto" class="text-axon-navy font-bold text-sm uppercase tracking-wider group-hover:text-axon-gold transition flex items-center mt-auto pt-4 border-t border-gray-100">
+                            Solicitar defensa técnica <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+
+                    <div class="bg-white p-10 rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl hover:border-axon-gold transition-all duration-300 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-16 h-16 bg-axon-navy rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-axon-gold transition-all duration-300 shadow-md">
+                                <i class="fas fa-user-shield text-3xl text-axon-gold group-hover:text-axon-navy transition-colors"></i>
+                            </div>
+                            <h3 class="text-2xl font-heading font-bold text-axon-navy mb-4">Derecho Disciplinario</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6 font-light">
+                                Su intachable hoja de vida es su mayor activo. Asumimos su representación legal frente a investigaciones de control interno y Procuraduría. Respaldamos a los miembros de las <strong>Fuerzas Militares y la Policía Nacional</strong> con argumentos sólidos, velando por sus garantías fundamentales.
+                            </p>
+                        </div>
+                        <a href="#contacto" class="text-axon-navy font-bold text-sm uppercase tracking-wider group-hover:text-axon-gold transition flex items-center mt-auto pt-4 border-t border-gray-100">
+                            Asesoría disciplinaria <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+
+                    <div class="bg-white p-10 rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl hover:border-axon-gold transition-all duration-300 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-16 h-16 bg-axon-navy rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-axon-gold transition-all duration-300 shadow-md">
+                                <i class="fas fa-home text-3xl text-axon-gold group-hover:text-axon-navy transition-colors"></i>
+                            </div>
+                            <h3 class="text-2xl font-heading font-bold text-axon-navy mb-4">Civil y Familia</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6 font-light">
+                                Prevenir conflictos es la mejor estrategia. Le brindamos la certeza legal que su entorno privado necesita. En Axon Legal somos expertos en la <strong>elaboración de contratos y minutas, testamentos, gestión ágil de sucesiones/herencias</strong> y acompañamiento en procesos de <strong>liquidación de sociedad conyugal</strong>.
+                            </p>
+                        </div>
+                        <a href="#contacto" class="text-axon-navy font-bold text-sm uppercase tracking-wider group-hover:text-axon-gold transition flex items-center mt-auto pt-4 border-t border-gray-100">
+                            Organizar mi legado <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Biblioteca Legal Gratuita -->
+        <section id="biblioteca" class="py-24 bg-gray-50 relative border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <span class="bg-axon-gold/20 text-axon-navy font-bold px-4 py-1 rounded-full text-xs tracking-wider uppercase mb-4 inline-block">Acceso Exclusivo y Gratuito</span>
+                    <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-axon-navy mt-4">BIBLIOTECA VIRTUAL AXON LEGAL</h2>
+                    <div class="h-1.5 w-24 bg-axon-gold mx-auto mt-6 mb-6 rounded-full"></div>
+                    <p class="text-axon-slate text-lg leading-relaxed">
+                        Como aporte a la comunidad y a nuestros clientes, ponemos a su disposición los <strong>25 compendios normativos y estatutos principales</strong> de la legislación colombiana, listos para descargar en formato PDF. El conocimiento es el primer paso hacia la justicia.
+                    </p>
+                </div>
+
+                <!-- Cuadrícula de 25 Códigos -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código Penal Militar</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código Civil</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código General del Proceso</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código Penal</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código de Procedimiento Penal</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código de Comercio</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código Nal. de Policía y Convivencia</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código Nal. de Tránsito Terrestre</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código de Infancia y Adolescencia</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código Contencioso Administrativo</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código de Proc. Administrativo (CPACA)</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código de Minas</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código Disciplinario Único</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código Sustantivo del Trabajo</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código Procesal del Trabajo 2025</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código Electoral</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código Penitenciario y Carcelario</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código Sanitario Nacional</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código Nal. de Recursos Naturales</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código de Régimen Departamental</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código de Régimen Municipal</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código de Procedimiento Civil</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Código del Menor (Histórico)</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Constitución Política de Colombia</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                    <div class="book-card bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 cursor-pointer">
+                        <i class="fas fa-file-pdf text-3xl text-red-500 mt-1"></i>
+                        <div><h4 class="font-bold text-sm text-axon-navy leading-tight">Estatuto Tributario Nacional</h4><a href="#" class="text-xs text-axon-gold font-semibold hover:underline mt-1 block">Descargar PDF</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Pasarela de Pagos / Donaciones -->
+        <section id="donaciones" class="py-24 bg-white relative border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="bg-axon-navy rounded-3xl shadow-2xl overflow-hidden text-white flex flex-col md:flex-row border border-axon-gold/20">
+                    
+                    <div class="md:w-1/2 p-10 lg:p-16 flex flex-col justify-center relative bg-gradient-to-br from-axon-navy to-axon-slate">
+                        <i class="fas fa-hand-holding-heart absolute top-10 right-10 text-9xl text-white opacity-5"></i>
+                        <span class="text-axon-gold font-bold tracking-widest text-xs mb-3 uppercase">Apoye Nuestra Labor</span>
+                        <h2 class="text-3xl lg:text-4xl font-heading font-extrabold mb-6">Aportes Voluntarios</h2>
+                        <p class="text-gray-300 font-light leading-relaxed mb-8">
+                            En Axon Legal creemos en la democratización del acceso a la justicia y la información legal. Si nuestro contenido o labor social ha sido de valor para usted, puede respaldar nuestra iniciativa corporativa realizando un aporte voluntario a través de nuestros canales bancarios oficiales.
+                        </p>
+                        
+                        <div class="flex items-center space-x-4 mt-auto">
+                            <i class="fas fa-qrcode text-axon-gold text-3xl"></i>
+                            <div class="text-sm text-gray-400">
+                                <p class="font-bold text-white uppercase tracking-wider">Pasarela Integrada</p>
+                                <p>Escanee el código QR desde la App de su banco preferido.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/2 bg-white p-8 lg:p-12 flex flex-col items-center justify-center text-axon-navy relative">
+                        <h3 class="text-2xl font-heading font-bold mb-6 text-center">Seleccione su Entidad Bancaria</h3>
+                        
+                        <div class="grid grid-cols-2 gap-3 w-full max-w-sm mb-8">
+                            <button onclick="openQR('bancolombia', this)" class="qr-tab-btn bg-axon-navy text-white hover:bg-axon-gold hover:text-axon-navy border border-gray-200 rounded-lg py-3 px-2 font-bold transition-all shadow-md text-sm flex items-center justify-center flex-col">
+                                Bancolombia
+                            </button>
+                            <button onclick="openQR('nequi', this)" class="qr-tab-btn bg-white hover:bg-axon-gold hover:text-axon-navy border border-gray-200 rounded-lg py-3 px-2 font-bold transition-all shadow-sm text-sm flex items-center justify-center flex-col">
+                                Nequi
+                            </button>
+                            <button onclick="openQR('davivienda', this)" class="qr-tab-btn bg-white hover:bg-axon-gold hover:text-axon-navy border border-gray-200 rounded-lg py-3 px-2 font-bold transition-all shadow-sm text-sm flex items-center justify-center flex-col">
+                                Davivienda
+                            </button>
+                            <button onclick="openQR('popular', this)" class="qr-tab-btn bg-white hover:bg-axon-gold hover:text-axon-navy border border-gray-200 rounded-lg py-3 px-2 font-bold transition-all shadow-sm text-sm flex items-center justify-center flex-col">
+                                Banco Popular
+                            </button>
+                        </div>
+
+                        <!-- Bancolombia -->
+                        <div id="bancolombia" class="qr-tab-content active text-center w-full flex flex-col items-center">
+                            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 shadow-inner w-full max-w-xs mb-4">
+                                <img src="WhatsApp Image 2026-09-22 at 3.10.04 PM_2.jpeg" alt="QR Bancolombia Inversiones Syt" class="w-full h-auto rounded-lg object-contain">
+                            </div>
+                            <p class="font-bold text-axon-navy text-sm">Inversiones Syt</p>
+                            <p class="text-xs text-gray-500">Llave: @inversionessyt</p>
+                        </div>
+
+                        <!-- Nequi -->
+                        <div id="nequi" class="qr-tab-content text-center w-full flex flex-col items-center">
+                            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 shadow-inner w-full max-w-xs mb-4">
+                                <img src="WhatsApp Image 2026-09-22 at 3.08.08 PM_2.jpeg" alt="QR Nequi Autorizado" class="w-full h-auto rounded-lg object-contain">
+                            </div>
+                            <p class="font-bold text-axon-navy text-sm">Cuenta Nequi Autorizada</p>
+                            <p class="text-xs text-gray-500">Celular: 302 497 9668</p>
+                        </div>
+
+                        <!-- Davivienda / Plata -->
+                        <div id="davivienda" class="qr-tab-content text-center w-full flex flex-col items-center">
+                            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 shadow-inner w-full max-w-xs mb-4">
+                                <img src="¡Escanea este QR desde tu banco o billetera digital para Pasarme Plata!_2.pdf" alt="QR Davivienda Autorizado" class="w-full h-auto rounded-lg object-contain border border-gray-300">
+                            </div>
+                            <p class="font-bold text-axon-navy text-sm">Cuenta DaviPlata Autorizada</p>
+                            <p class="text-xs text-gray-500">Llave: @PLATA3025186263</p>
+                        </div>
+
+                        <!-- Banco Popular -->
+                        <div id="popular" class="qr-tab-content text-center w-full flex flex-col items-center">
+                            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 shadow-inner w-full max-w-xs mb-4">
+                                <img src="WhatsApp Image 2026-09-22 at 3.06.18 PM_2.jpeg" alt="QR Banco Popular" class="w-full h-auto rounded-lg object-contain">
+                            </div>
+                            <p class="font-bold text-axon-navy text-sm">Banco Popular Bre-B</p>
+                            <p class="text-xs text-gray-500">Llave: @BPJSC721</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Nosotros / Respaldo -->
+        <section id="nosotros" class="py-20 bg-axon-navy text-white relative border-y-4 border-axon-gold">
+            <div class="absolute inset-0 opacity-10 bg-[url('marca de agua axon legal_2.jpg')] bg-center bg-no-repeat bg-cover mix-blend-overlay"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="md:w-1/2 space-y-6">
+                    <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-white">EL RESPALDO DE UNA MATRIZ SÓLIDA</h2>
+                    <p class="text-gray-300 font-light leading-relaxed text-lg">
+                        <strong>Axon Legal</strong> no opera de manera aislada. Somos la división jurídica especializada de <strong>AXON Global S.A.S.</strong>, una organización estructurada bajo los más altos estándares de calidad, ética corporativa y confidencialidad. 
+                    </p>
+                    <p class="text-gray-300 font-light leading-relaxed text-lg">
+                        Al elegir a Axon Legal, usted no solo contrata un abogado particular; contrata a una firma robusta que audita, supervisa y respalda cada actuación procesal para asegurar que su caso sea manejado con la máxima diligencia.
+                    </p>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="grid grid-cols-2 gap-6 w-full max-w-md">
+                        <div class="bg-white/10 p-6 rounded-xl border border-white/20 text-center backdrop-blur-sm">
+                            <i class="fas fa-lock text-3xl text-axon-gold mb-3"></i>
+                            <h4 class="font-bold text-sm tracking-wide uppercase">Secreto Profesional</h4>
+                        </div>
+                        <div class="bg-white/10 p-6 rounded-xl border border-white/20 text-center backdrop-blur-sm">
+                            <i class="fas fa-gavel text-3xl text-axon-gold mb-3"></i>
+                            <h4 class="font-bold text-sm tracking-wide uppercase">Rigor Jurídico</h4>
+                        </div>
+                        <div class="bg-white/10 p-6 rounded-xl border border-white/20 text-center backdrop-blur-sm">
+                            <i class="fas fa-handshake text-3xl text-axon-gold mb-3"></i>
+                            <h4 class="font-bold text-sm tracking-wide uppercase">Empatía Militar</h4>
+                        </div>
+                        <div class="bg-white/10 p-6 rounded-xl border border-white/20 text-center backdrop-blur-sm">
+                            <i class="fas fa-building text-3xl text-axon-gold mb-3"></i>
+                            <h4 class="font-bold text-sm tracking-wide uppercase">Visión Corporativa</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto y Formulario -->
+        <section id="contacto" class="py-24 bg-gray-50 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-gray-200">
+                    
+                    <div class="lg:w-2/5 bg-axon-slate p-10 lg:p-12 text-white flex flex-col justify-between relative overflow-hidden">
+                        <div class="relative z-10 space-y-8">
+                            <div>
+                                <h3 class="text-3xl font-heading font-extrabold mb-4 text-white">INICIE SU DEFENSA HOY</h3>
+                                <div class="h-1 w-16 bg-axon-gold mb-6 rounded"></div>
+                                <p class="text-gray-300 text-sm leading-relaxed mb-8 font-light">
+                                    Su situación requiere atención profesional e inmediata. Diligencie el formulario con sus datos. Puede adjuntar de manera segura los documentos preliminares de su caso para que nuestro equipo en Axon Legal realice una primera valoración.
+                                </p>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-center space-x-4 group">
+                                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-axon-gold transition-colors">
+                                        <i class="fas fa-phone-alt text-axon-gold group-hover:text-axon-navy text-lg transition-colors"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-400 uppercase tracking-wider font-bold mb-1">Línea Oficial de Atención</p>
+                                        <div class="flex items-center space-x-3">
+                                            <a href="tel:+573180158629" class="text-lg font-bold hover:text-axon-gold transition">+57 318 0158629</a>
+                                            <a href="https://wa.me/573180158629" target="_blank" rel="noopener noreferrer" class="text-[#25D366] hover:text-white transition text-xl" title="Contactar por WhatsApp">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4 group">
+                                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-axon-gold transition-colors">
+                                        <i class="fas fa-envelope text-axon-gold group-hover:text-axon-navy text-lg transition-colors"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-400 uppercase tracking-wider font-bold mb-1">Correo Corporativo</p>
+                                        <a href="mailto:legal@axonglobal.org" class="text-lg font-bold hover:text-axon-gold transition">legal@axonglobal.org</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fas fa-balance-scale absolute -bottom-10 -right-10 text-9xl text-white opacity-5 transform -rotate-12 pointer-events-none"></i>
+                    </div>
+
+                    <div class="lg:w-3/5 p-10 lg:p-12">
+                        <form id="formulario-legal" action="mailto:legal@axonglobal.org" method="POST" enctype="multipart/form-data" class="space-y-6">
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="nombre" class="block text-sm font-semibold text-axon-navy mb-2">Nombre Completo <span class="text-red-500">*</span></label>
+                                    <input type="text" id="nombre" name="Nombre" required placeholder="Ingrese su nombre completo" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-axon-navy focus:border-axon-navy outline-none transition bg-gray-50 text-axon-navy">
+                                </div>
+                                <div>
+                                    <label for="telefono" class="block text-sm font-semibold text-axon-navy mb-2">Teléfono de Contacto <span class="text-red-500">*</span></label>
+                                    <input type="tel" id="telefono" name="Telefono" required placeholder="Ej. 318 0158629" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-axon-navy focus:border-axon-navy outline-none transition bg-gray-50 text-axon-navy">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="md:col-span-2">
+                                    <label for="servicio" class="block text-sm font-semibold text-axon-navy mb-2">Área Legal de Interés <span class="text-red-500">*</span></label>
+                                    <select id="servicio" name="Servicio_Requerido" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-axon-navy focus:border-axon-navy outline-none transition bg-gray-50 text-axon-navy">
+                                        <option value="" disabled selected>Seleccione la especialidad de su caso...</option>
+                                        <option value="Insolvencia">Ley de Insolvencia Persona Natural no Comerciante</option>
+                                        <option value="Penal_Militar">Proceso ante la Justicia Penal Militar</option>
+                                        <option value="Disciplinario">Proceso de Derecho Disciplinario (FF.MM. o Policía Nacional)</option>
+                                        <option value="Civil_Familia">Contratos, Testamentos, Sucesiones o Familia</option>
+                                        <option value="Otro">Consulta Legal General</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="mensaje" class="block text-sm font-semibold text-axon-navy mb-2">Descripción Breve del Caso</label>
+                                <textarea id="mensaje" name="Mensaje" rows="4" placeholder="Describa de manera general los hechos de su situación jurídica..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-axon-navy focus:border-axon-navy outline-none transition bg-gray-50 text-axon-navy resize-none"></textarea>
+                            </div>
+
+                            <div class="p-5 bg-white border-2 border-dashed border-gray-300 rounded-lg hover:border-axon-navy transition relative group">
+                                <label for="adjuntos" class="block text-sm font-semibold text-axon-navy mb-1 cursor-pointer">
+                                    <i class="fas fa-paperclip mr-2 text-axon-gold"></i> Adjuntar Documentos de Soporte (Opcional)
+                                </label>
+                                <p class="text-xs text-gray-500 mb-3 mt-1 font-light">Formatos admitidos: PDF, JPG, PNG. Tamaño máximo total permitido: 10MB.</p>
+                                <input type="file" id="adjuntos" name="Documentos_Adjuntos" accept=".pdf, image/jpeg, image/png, image/jpg" multiple class="w-full text-sm text-gray-600 focus:outline-none">
+                                <div id="error-archivo" class="text-red-600 text-xs font-bold mt-2 hidden bg-red-50 p-2 rounded border border-red-200">
+                                    <i class="fas fa-exclamation-triangle mr-1"></i> El tamaño de los archivos supera los 10MB. Reduzca el peso o envíelos directamente al correo corporativo.
+                                </div>
+                            </div>
+
+                            <button type="submit" id="btn-enviar" class="w-full bg-axon-navy text-white font-heading font-extrabold py-4 px-6 rounded-lg hover:bg-axon-blue transition-colors shadow-lg flex items-center justify-center uppercase tracking-wider text-sm">
+                                Enviar Solicitud a Axon Legal <i class="fas fa-paper-plane ml-3"></i>
+                            </button>
+                            <p class="text-center text-xs text-gray-400 mt-3 font-light">
+                                <i class="fas fa-shield-alt mr-1"></i> Toda información suministrada está amparada bajo el secreto profesional corporativo de AXON Global S.A.S.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Institucional obligatorio -->
+    <footer class="bg-axon-navy pt-16 pb-8 border-t-4 border-axon-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 items-start border-b border-gray-700 pb-12">
+                
+                <div class="md:col-span-5 flex flex-col space-y-6">
+                    <div class="flex items-center space-x-4 bg-white/5 p-4 rounded-xl border border-white/10 inline-flex w-max">
+                        <img src="image_4e8f77.png" alt="AXON Global Footer" class="h-12 w-auto object-contain rounded-full">
+                        <div class="h-8 w-px bg-gray-500"></div>
+                        <img src="image_4da6c0.png" alt="Axon Legal Footer" class="h-12 w-auto object-contain rounded-full">
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed font-light pr-4">
+                        <strong>Axon Legal</strong> es una marca registrada y la división jurídica estratégica perteneciente a <strong>AXON Global S.A.S.</strong> Brindamos conocimiento, seguridad, confianza y justicia, salvaguardando los derechos de nuestros clientes con los más altos estándares éticos.
+                    </p>
+                </div>
+
+                <div class="md:col-span-3 flex flex-col">
+                    <h4 class="text-white font-heading font-bold mb-6 uppercase tracking-wider text-sm flex items-center">
+                        <i class="fas fa-sitemap text-axon-gold mr-2"></i> Navegación
+                    </h4>
+                    <nav class="flex flex-col space-y-3 text-sm text-gray-400">
+                        <a href="#inicio" class="hover:text-axon-gold transition flex items-center"><i class="fas fa-angle-right mr-2 text-xs"></i> Inicio</a>
+                        <a href="#trayectoria" class="hover:text-axon-gold transition flex items-center"><i class="fas fa-angle-right mr-2 text-xs"></i> Nuestra Experiencia</a>
+                        <a href="#servicios" class="hover:text-axon-gold transition flex items-center"><i class="fas fa-angle-right mr-2 text-xs"></i> Servicios Jurídicos</a>
+                        <a href="#biblioteca" class="hover:text-axon-gold transition flex items-center"><i class="fas fa-angle-right mr-2 text-xs"></i> Biblioteca Gratuita</a>
+                        <a href="#donaciones" class="hover:text-axon-gold transition flex items-center"><i class="fas fa-angle-right mr-2 text-xs"></i> Aportes Voluntarios</a>
+                    </nav>
+                </div>
+
+                <div class="md:col-span-4 flex flex-col">
+                    <h4 class="text-white font-heading font-bold mb-6 uppercase tracking-wider text-sm flex items-center">
+                        <i class="fas fa-address-book text-axon-gold mr-2"></i> Contacto Oficial
+                    </h4>
+                    <div class="flex flex-col space-y-4 text-sm text-gray-400">
+                        <a href="mailto:legal@axonglobal.org" class="flex items-center hover:text-axon-gold transition bg-white/5 p-3 rounded-lg border border-white/5">
+                            <i class="fas fa-envelope text-lg w-6 text-axon-gold"></i>
+                            <span class="ml-2 font-medium">legal@axonglobal.org</span>
+                        </a>
+                        <a href="tel:+573180158629" class="flex items-center hover:text-axon-gold transition bg-white/5 p-3 rounded-lg border border-white/5">
+                            <i class="fas fa-phone-alt text-lg w-6 text-axon-gold"></i>
+                            <span class="ml-2 font-medium">+57 318 0158629</span>
+                        </a>
+                        <a href="https://www.axonglobal.org" target="_blank" rel="noopener noreferrer" class="flex items-center hover:text-axon-gold transition bg-white/5 p-3 rounded-lg border border-white/5">
+                            <i class="fas fa-globe text-lg w-6 text-axon-gold"></i>
+                            <span class="ml-2 font-medium">www.axonglobal.org</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-8 text-center text-xs text-gray-500 font-light flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2026 AXON Global S.A.S. División Axon Legal. Todos los derechos reservados.</p>
+                <p class="mt-2 md:mt-0">Diseño web y operaciones estructuradas desde Bogotá, Colombia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts (Modular JS para interactividad) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            /* --- 1. Interacción del Menú Móvil --- */
+            const btnMenu = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuLinks = mobileMenu.querySelectorAll('a');
+
+            if(btnMenu && mobileMenu) {
+                btnMenu.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = btnMenu.querySelector('i');
+                    if(mobileMenu.classList.contains('hidden')) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    } else {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    }
+                });
+
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        const icon = btnMenu.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    });
+                });
+            }
+
+            /* --- 2. Smooth Scrolling con ajuste para Navbar Sticky --- */
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerOffset = 96; 
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            /* --- 3. Validación de Tamaño Máximo de Archivos Adjuntos (10MB) --- */
+            const fileInput = document.getElementById('adjuntos');
+            const fileErrorMsg = document.getElementById('error-archivo');
+            const submitBtn = document.getElementById('btn-enviar');
+            const MAX_BYTES = 10 * 1024 * 1024; 
+
+            if(fileInput && fileErrorMsg && submitBtn) {
+                fileInput.addEventListener('change', function() {
+                    let totalSize = 0;
+                    for (let i = 0; i < this.files.length; i++) {
+                        totalSize += this.files[i].size;
+                    }
+                    if (totalSize > MAX_BYTES) {
+                        fileErrorMsg.classList.remove('hidden');
+                        submitBtn.disabled = true;
+                        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                        this.value = ''; 
+                    } else {
+                        fileErrorMsg.classList.add('hidden');
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    }
+                });
+            }
+        });
+
+        /* --- 4. Lógica de Pestañas para Pasarela QR --- */
+        function openQR(bankId, element) {
+            const contents = document.querySelectorAll('.qr-tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            const buttons = document.querySelectorAll('.qr-tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-axon-navy', 'text-white', 'shadow-md');
+                btn.classList.add('bg-white', 'text-axon-navy', 'shadow-sm');
+            });
+
+            document.getElementById(bankId).classList.add('active');
+            element.classList.remove('bg-white', 'text-axon-navy', 'shadow-sm');
+            element.classList.add('bg-axon-navy', 'text-white', 'shadow-md');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "Remix AXON Legal - Firma Jurídica \u0026 Asesoría Estratégica",
+  "description": "Firma jurídica de élite especializada en Insolvencia de Persona Natural, Justicia Penal Militar, Disciplinario y Derecho Civil en Colombia con Agente IA consultor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
