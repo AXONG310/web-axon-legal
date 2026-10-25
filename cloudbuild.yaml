@@ -8,3 +8,6 @@ steps:
     args: ['run', 'build']
 
 timeout: '300s'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
