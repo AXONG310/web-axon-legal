@@ -1,13 +1,10 @@
 steps:
-  # Paso 1: Instalar las dependencias del proyecto
   - name: 'node:18'
     entrypoint: 'npm'
     args: ['install']
 
-  # Paso 2: Compilar y validar el proyecto para producción
   - name: 'node:18'
     entrypoint: 'npm'
     args: ['run', 'build']
 
-# Opcional: Especifica el tiempo límite para todo el proceso (en segundos)
-timeout: 300s
+timeout: '300s'
