@@ -1,7 +1,7 @@
 steps:
   - name: 'node:18'
     entrypoint: 'npm'
-    args: ['install']
+    args: ['install', '--legacy-peer-deps']
 
   - name: 'node:18'
     entrypoint: 'npm'
