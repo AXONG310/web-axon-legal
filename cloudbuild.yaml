@@ -4,8 +4,8 @@ steps:
     args: ['install', '--legacy-peer-deps']
 
   - name: 'node:18'
-    entrypoint: 'npx'
-    args: ['vite', 'build']
+    entrypoint: 'node'
+    args: ['./node_modules/vite/bin/vite.js', 'build']
 
 timeout: '300s'
 
