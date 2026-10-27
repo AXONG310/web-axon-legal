@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "tidy-bounty-512402-n2-17669",
     "public": "dist",
     "ignore": [
       "firebase.json",
