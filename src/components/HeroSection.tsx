@@ -40,7 +40,7 @@ export function HeroSection({ onOpenConsultant, onOpenEvaluator }: HeroSectionPr
           </div>
         </div>
 
-        {/* Tarjetas de Sede y Defensa Técnica con Imágenes Institucionales Verificadas */}
+        {/* Tarjetas de Sede y Defensa Técnica con Imágenes Verificadas */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
           
           {/* Tarjeta 1: Sede Bogotá */}
