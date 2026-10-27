@@ -40,7 +40,7 @@ export function HeroSection({ onOpenConsultant, onOpenEvaluator }: HeroSectionPr
           </div>
         </div>
 
-        {/* Tarjetas de Sede y Defensa Técnica con Imágenes Corregidas */}
+        {/* Tarjetas de Sede y Defensa Técnica con Imágenes Corregidas y Respaldo Fallback */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
           
           {/* Tarjeta 1: Sede Bogotá */}
@@ -62,7 +62,7 @@ export function HeroSection({ onOpenConsultant, onOpenEvaluator }: HeroSectionPr
             <div className="p-6">
               <h3 className="text-xl font-bold text-[#D4AF37] mb-2">Sede corporativa de Axon Legal en Bogotá</h3>
               <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                Ubicados en el centro institucional de la capital. Respaldo corporativo de <strong>Axon Global Tech S.A.S.</strong> Litigio presencial y virtual en <strong>axonglobal.org</strong>.
+                Ubicados estratégicamente en el centro institucional de la capital, bajo el respaldo de <strong>Axon Global Tech S.A.S.</strong> Litigio estratégico en <strong>axonglobal.org</strong>.
               </p>
               <div className="text-xs text-slate-400 border-t border-slate-800 pt-3 flex justify-between items-center">
                 <span>Tel / WhatsApp: +57 3180158629</span>
@@ -90,7 +90,7 @@ export function HeroSection({ onOpenConsultant, onOpenEvaluator }: HeroSectionPr
             <div className="p-6">
               <h3 className="text-xl font-bold text-[#D4AF37] mb-2">Defensa técnica de Axon Legal</h3>
               <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                Representación judicial de máximo nivel con rigor científico. Conocimiento, seguridad, confianza y justicia bajo estricto secreto profesional.
+                Representación judicial y extrajudicial de máximo nivel con rigor científico y jurídico. Conocimiento, seguridad, confianza y justicia bajo estricto secreto profesional.
               </p>
               <div className="text-xs text-slate-400 border-t border-slate-800 pt-3 flex justify-between items-center">
                 <span>CEO: ceo@axonglobal.org</span>
