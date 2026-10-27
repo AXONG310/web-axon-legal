@@ -18,4 +18,57 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
+<!-- Sección de Tarjetas Principales (Sede y Defensa Técnica con imágenes corregidas y respaldos visuales) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+    
+    <!-- Tarjeta 1: Sede Corporativa -->
+    <div class="bg-slate-900 border border-amber-500/30 rounded-xl overflow-hidden shadow-lg flex flex-col justify-between">
+        <div class="relative h-56 overflow-hidden bg-slate-950">
+            <img 
+                src="./assets/astudio/sede-bogota.jpg" 
+                alt="Sede corporativa de AXON Legal en Bogotá" 
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                onError="this.onerror=null; this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop';"
+            />
+            <div class="absolute top-3 left-3 bg-slate-950/80 text-amber-400 text-xs font-bold px-3 py-1 rounded border border-amber-500/40">
+                Bogotá, D.C.
+            </div>
+        </div>
+        <div class="p-6">
+            <h3 class="text-xl font-bold text-amber-400 mb-2">Sede corporativa de AXON Legal en Bogotá</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Ubicados estratégicamente en el centro neurálgico e institucional de la capital, bajo el respaldo de <strong>Axon Global Tech S.A.S.</strong> Litigio estratégico y consultoría presencial y virtual en <strong>axonglobal.org</strong>.
+            </p>
+            <div class="text-xs text-slate-400 border-t border-slate-800 pt-3 flex justify-between items-center">
+                <span>Contacto: +57 3180158629</span>
+                <span class="text-amber-400 font-semibold">legal@axonglobal.org</span>
+            </div>
+        </div>
+    </div>
 
+    <!-- Tarjeta 2: Defensa Técnica -->
+    <div class="bg-slate-900 border border-amber-500/30 rounded-xl overflow-hidden shadow-lg flex flex-col justify-between">
+        <div class="relative h-56 overflow-hidden bg-slate-950">
+            <img 
+                src="./assets/astudio/defensa-tecnica.jpg" 
+                alt="Defensa técnica de AXON Legal" 
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                onError="this.onerror=null; this.src='https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800&auto=format&fit=crop';"
+            />
+            <div class="absolute top-3 left-3 bg-slate-950/80 text-amber-400 text-xs font-bold px-3 py-1 rounded border border-amber-500/40">
+                Litigio Especializado
+            </div>
+        </div>
+        <div class="p-6">
+            <h3 class="text-xl font-bold text-amber-400 mb-2">Defensa técnica de AXON Legal</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Representación judicial y extrajudicial de máximo nivel con rigor científico y jurídico. Con conocimiento, seguridad, confianza y justicia amparados bajo estricto secreto profesional.
+            </p>
+            <div class="text-xs text-slate-400 border-t border-slate-800 pt-3 flex justify-between items-center">
+                <span>CEO: ceo@axonglobal.org</span>
+                <span class="text-amber-400 font-semibold">Axon Legal S.A.S.</span>
+            </div>
+        </div>
+    </div>
+
+</div>
