@@ -1,5 +1,5 @@
 import React from 'react';
-import { DollarSign, ShieldAlert, Award, Home, ArrowRight, CheckCircle2, ChevronRight } from 'lucide-react';
+import { DollarSign, ShieldAlert, Award, Home, ChevronRight } from 'lucide-react';
 
 interface ServicesSectionProps {
   onOpenConsultant: () => void;
@@ -31,8 +31,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenConsulta
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
           
-          {/* Card 1: Insolvencia Persona Natural (Featured Marquee Card - 7 cols) */}
-          <div className="lg:col-span-7 bg-[#0B132B] border border-slate-800 hover:border-[#D4AF37]/50 rounded-2xl p-8 lg:p-10 transition-all duration-300 shadow-xl flex flex-col justify-between group">
+          {/* Card 1: Insolvencia Persona Natural (Featured Marquee Card - 12 cols for clean layout) */}
+          <div className="lg:col-span-12 bg-[#0B132B] border border-slate-800 hover:border-[#D4AF37]/50 rounded-2xl p-8 lg:p-10 transition-all duration-300 shadow-xl flex flex-col justify-between group">
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div className="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#0B132B] transition-colors">
@@ -54,21 +54,21 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenConsulta
                 ¿Las libranzas bancarias, embargos a nómina o deudas asfixiantes le impiden vivir con tranquilidad? La ley colombiana (Arts. 538 y ss. del CGP) le otorga el derecho de suspender inmediatamente remates y cobros, negociar con quitas sustanciales de capital y reinsertarse limpiamente en el sistema financiero.
               </p>
 
-              <div className="grid sm:grid-cols-2 gap-2.5 text-xs text-slate-300 mb-6">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs text-slate-300 mb-6">
+                <div className="flex items-center gap-2 bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
                   <span>Suspensión de embargos a nómina</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                <div className="flex items-center gap-2 bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
                   <span>Freno a libranzas asfixiantes</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                <div className="flex items-center gap-2 bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
                   <span>Cese inmediato de llamadas de cobro</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                <div className="flex items-center gap-2 bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
                   <span>Reorganización integral o liquidación</span>
                 </div>
               </div>
@@ -83,7 +83,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenConsulta
                 <ChevronRight className="w-4 h-4" />
               </button>
               <a
-                href="https://wa.me/573180158629?text=Hola%20AXON%20Legal,%20deseo%20asesor%C3%ADa%20inmediata%20para%20Ley%20de%20Insolvencia%20Persona%20Natural."
+                href="https://wa.me/573180158629?text=Hola%20Axon%20Legal,%20deseo%20asesor%C3%ADa%20inmediata%20para%20Ley%20de%20Insolvencia%20Persona%20Natural."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs font-semibold text-slate-400 hover:text-white transition-colors"
@@ -93,43 +93,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenConsulta
             </div>
           </div>
 
-          {/* Card 2: Strategic Image Anchor (5 cols) */}
-          <div className="lg:col-span-5 bg-[#0B132B] border border-slate-800 rounded-2xl overflow-hidden shadow-xl flex flex-col">
-            <div className="relative h-64 sm:h-72 overflow-hidden">
-              <img
-                src="/src/assets/images/legal_defense_counsel_1792541731898.jpg"
-                alt="Defensa técnica de Axon Legal"
-                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B132B] via-transparent to-transparent" />
-            </div>
-            <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
-              <div>
-                <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-1">
-                  Defensa de Élite en Colombia
-                </span>
-                <h4 className="text-xl font-bold text-white mb-2">
-                  Litigio Estratégico y Auditoría de Procesos
-                </h4>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  Cada actuación judicial es supervisada por socios con más de 15 años de conocimiento específico en doctrina castrense, derecho sancionatorio y civil.
-                </p>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
-                <button
-                  onClick={onOpenConsultant}
-                  className="text-xs font-bold text-white bg-slate-800 hover:bg-slate-700 px-4 py-2.5 rounded-lg border border-slate-700 transition-colors flex items-center gap-2 cursor-pointer"
-                >
-                  <span>Consultar con Agente IA</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#D4AF37]" />
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 3: Justicia Penal Militar (6 cols) */}
+          {/* Card 2: Justicia Penal Militar y Policial (6 cols) */}
           <div className="lg:col-span-6 bg-[#0B132B] border border-slate-800 hover:border-[#D4AF37]/50 rounded-2xl p-8 lg:p-9 transition-all duration-300 shadow-xl flex flex-col justify-between group">
             <div>
               <div className="w-14 h-14 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:bg-[#D4AF37] group-hover:text-[#0B132B] transition-colors mb-6">
@@ -149,15 +113,15 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenConsulta
 
               <div className="space-y-2 text-xs text-slate-300 mb-6">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"></span>
                   <span>Defensa en audiencias preliminares y juicio oral</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"></span>
                   <span>Acreditación estricta de la relación con el servicio</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"></span>
                   <span>Atención prioritaria y desplazamientos a nivel nacional</span>
                 </div>
               </div>
@@ -165,7 +129,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenConsulta
 
             <div className="pt-4 border-t border-slate-800/80">
               <a
-                href="https://wa.me/573180158629?text=Hola%20AXON%20Legal,%20requiero%20defensa%20t%C3%A9cnica%20en%20Justicia%20Penal%20Militar."
+                href="https://wa.me/573180158629?text=Hola%20Axon%20Legal,%20requiero%20defensa%20t%C3%A9cnica%20en%20Justicia%20Penal%20Militar."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-bold text-[#D4AF37] hover:text-amber-200 transition-colors flex items-center gap-2"
@@ -176,7 +140,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenConsulta
             </div>
           </div>
 
-          {/* Card 4: Derecho Disciplinario (6 cols) */}
+          {/* Card 3: Derecho Disciplinario (6 cols) */}
           <div className="lg:col-span-6 bg-[#0B132B] border border-slate-800 hover:border-[#D4AF37]/50 rounded-2xl p-8 lg:p-9 transition-all duration-300 shadow-xl flex flex-col justify-between group">
             <div>
               <div className="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#0B132B] transition-colors mb-6">
@@ -196,15 +160,15 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenConsulta
 
               <div className="space-y-2 text-xs text-slate-300 mb-6">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"></span>
                   <span>Contestación oportuna a pliegos de cargos</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"></span>
                   <span>Recursos de apelación y nulidades procesales</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"></span>
                   <span>Protección ante sanciones de suspensión e inhabilidad</span>
                 </div>
               </div>
@@ -212,7 +176,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenConsulta
 
             <div className="pt-4 border-t border-slate-800/80">
               <a
-                href="https://wa.me/573180158629?text=Hola%20AXON%20Legal,%20tengo%20una%20investigaci%C3%B3n%20disciplinaria%20y%20necesito%20apoderado."
+                href="https://wa.me/573180158629?text=Hola%20Axon%20Legal,%20tengo%20una%20investigaci%C3%B3n%20disciplinaria%20y%20necesito%20apoderado."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-bold text-[#D4AF37] hover:text-amber-200 transition-colors flex items-center gap-2"
@@ -223,7 +187,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenConsulta
             </div>
           </div>
 
-          {/* Card 5: Civil y Familia (12 cols full width bottom accent) */}
+          {/* Card 4: Civil y Familia (12 cols full width bottom accent) */}
           <div className="lg:col-span-12 bg-gradient-to-r from-[#0B132B] via-[#101A38] to-[#0B132B] border border-slate-800 hover:border-[#D4AF37]/50 rounded-2xl p-8 lg:p-10 transition-all duration-300 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 group">
             <div className="space-y-3 max-w-3xl">
               <div className="flex items-center gap-3">
@@ -247,13 +211,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenConsulta
                 onClick={onOpenConsultant}
                 className="px-6 py-3.5 bg-[#D4AF37] hover:bg-[#C29B27] text-[#0B132B] font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all text-center cursor-pointer"
               >
-                Consultar con Asesor IA
+                Consultar con Asesor Especializado
               </button>
               <a
                 href="tel:+573180158629"
                 className="px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-xl border border-slate-700 transition-all text-center"
               >
-                Llamar a la Firma (+57 318 0158629)
+                Llamar a la Firma (+573180158629)
               </a>
             </div>
           </div>

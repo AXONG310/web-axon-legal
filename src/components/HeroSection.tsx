@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, MapPin } from 'lucide-react';
+import { ShieldCheck, MapPin, Scale } from 'lucide-react';
 
 interface HeroSectionProps {
   onOpenConsultant: () => void;
@@ -14,7 +14,7 @@ export function HeroSection({ onOpenConsultant, onOpenEvaluator }: HeroSectionPr
         {/* Encabezado Principal */}
         <div className="text-center max-w-4xl mx-auto mb-16">
           <span className="bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/30 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-4">
-            Axon Global Tech S.A.S. &bull; Axon Legal S.A.S.
+            Axon Global Tech S.A.S. &bull; Axon Legal
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-[#D4AF37] mb-6 tracking-tight font-heading">
             Conocimiento, Seguridad, Confianza, Justicia
@@ -40,30 +40,28 @@ export function HeroSection({ onOpenConsultant, onOpenEvaluator }: HeroSectionPr
           </div>
         </div>
 
-        {/* Tarjetas Principales con Rutas Públicas Directas y Respaldo Fallback */}
+        {/* Cuadrícula Alineada de 3 Tarjetas en Fila con Imágenes Únicas */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
           
           {/* Tarjeta 1: Sede Bogotá */}
           <div className="bg-slate-900 border border-[#D4AF37]/30 rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between">
-            <div className="relative h-64 overflow-hidden bg-slate-950">
+            <div className="relative h-60 overflow-hidden bg-slate-950">
               <img 
-                src="/assets/images/hero_legal_firm_179254173260.jpg" 
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" 
                 alt="Sede corporativa de Axon Legal en Bogotá" 
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                onError={(e: any) => {
-                  e.target.onerror = null;
-                  e.target.src = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop";
-                }}
               />
               <div className="absolute top-3 left-3 bg-[#0B132B]/90 text-[#D4AF37] text-xs font-bold px-3 py-1 rounded border border-[#D4AF37]/40 flex items-center gap-1.5 shadow">
                 <MapPin className="w-3.5 h-3.5" /> Bogotá, D.C.
               </div>
             </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-[#D4AF37] mb-2">Sede corporativa de Axon Legal en Bogotá</h3>
-              <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                Ubicados estratégicamente en el centro institucional de la capital, bajo el respaldo de <strong>Axon Global Tech S.A.S.</strong> Litigio estratégico en <strong>axonglobal.org</strong>.
-              </p>
+            <div className="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 className="text-lg font-bold text-[#D4AF37] mb-2">Sede corporativa de Axon Legal en Bogotá</h3>
+                <p className="text-slate-300 text-xs md:text-sm leading-relaxed mb-4">
+                  Ubicados estratégicamente en el centro institucional de la capital, bajo el respaldo de <strong>Axon Global Tech S.A.S.</strong> Litigio estratégico en <strong>axonglobal.org</strong>.
+                </p>
+              </div>
               <div className="text-xs text-slate-400 border-t border-slate-800 pt-3 flex justify-between items-center">
                 <span>Tel / WhatsApp: +573180158629</span>
                 <span className="text-[#D4AF37] font-semibold">legal@axonglobal.org</span>
@@ -71,30 +69,54 @@ export function HeroSection({ onOpenConsultant, onOpenEvaluator }: HeroSectionPr
             </div>
           </div>
 
-          {/* Tarjeta 2: Defensa Técnica / Litigio Estratégico */}
+          {/* Tarjeta 2: Defensa Técnica */}
           <div className="bg-slate-900 border border-[#D4AF37]/30 rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between">
-            <div className="relative h-64 overflow-hidden bg-slate-950">
+            <div className="relative h-60 overflow-hidden bg-slate-950">
               <img 
-                src="/assets/images/legal_defense_counsel_1792541731898.jpg" 
+                src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop" 
                 alt="Defensa técnica de Axon Legal" 
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                onError={(e: any) => {
-                  e.target.onerror = null;
-                  e.target.src = "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop";
-                }}
               />
               <div className="absolute top-3 left-3 bg-[#0B132B]/90 text-[#D4AF37] text-xs font-bold px-3 py-1 rounded border border-[#D4AF37]/40 flex items-center gap-1.5 shadow">
                 <ShieldCheck className="w-3.5 h-3.5" /> Litigio Especializado
               </div>
             </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-[#D4AF37] mb-2">Defensa técnica de Axon Legal</h3>
-              <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                Representación judicial y extrajudicial de máximo nivel con rigor científico y jurídico. Conocimiento, seguridad, confianza y justicia bajo estricto secreto profesional.
-              </p>
+            <div className="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 className="text-lg font-bold text-[#D4AF37] mb-2">Defensa técnica de Axon Legal</h3>
+                <p className="text-slate-300 text-xs md:text-sm leading-relaxed mb-4">
+                  Representación judicial y extrajudicial de máximo nivel con rigor científico y jurídico. Conocimiento, seguridad, confianza y justicia bajo estricto secreto profesional.
+                </p>
+              </div>
               <div className="text-xs text-slate-400 border-t border-slate-800 pt-3 flex justify-between items-center">
                 <span>CEO: ceo@axonglobal.org</span>
-                <span className="text-[#D4AF37] font-semibold">Axon Legal S.A.S.</span>
+                <span className="text-[#D4AF37] font-semibold">Axon Legal</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Tarjeta 3: Auditoría Procesal y Consultoría Senior (Imagen Única y Representativa) */}
+          <div className="bg-slate-900 border border-[#D4AF37]/30 rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between md:col-span-2 lg:col-span-1">
+            <div className="relative h-60 overflow-hidden bg-slate-950">
+              <img 
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop" 
+                alt="Auditoría procesal y consultoría senior de Axon Legal" 
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+              <div className="absolute top-3 left-3 bg-[#0B132B]/90 text-[#D4AF37] text-xs font-bold px-3 py-1 rounded border border-[#D4AF37]/40 flex items-center gap-1.5 shadow">
+                <Scale className="w-3.5 h-3.5" /> Auditoría Procesal
+              </div>
+            </div>
+            <div className="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 className="text-lg font-bold text-[#D4AF37] mb-2">Auditoría procesal y consultoría senior</h3>
+                <p className="text-slate-300 text-xs md:text-sm leading-relaxed mb-4">
+                  Supervisión exhaustiva de actuaciones judiciales y dictamen pericial en derecho con el respaldo corporativo exclusivo de <strong>Axon Global Tech S.A.S.</strong>
+                </p>
+              </div>
+              <div className="text-xs text-slate-400 border-t border-slate-800 pt-3 flex justify-between items-center">
+                <span>Portal: axonglobal.org</span>
+                <span className="text-[#D4AF37] font-semibold">Axon Legal</span>
               </div>
             </div>
           </div>
