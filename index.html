@@ -1,74 +1,322 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AXON Legal | Firma Jurídica Especializada en Colombia</title>
-    <meta name="description" content="Firma jurídica de élite de AXON Global S.A.S. Especialistas en Ley de Insolvencia, Justicia Penal Militar, Régimen Disciplinario y Derecho Civil en Colombia." />
-    <meta property="og:title" content="AXON Legal | Conocimiento, Seguridad, Confianza, Justicia" />
-    <meta property="og:description" content="Protegemos su patrimonio, su carrera y su tranquilidad. Asesoría jurídica estratégica y agente IA para resolución inmediata de casos." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-[#090D16] text-slate-100 antialiased selection:bg-[#D4AF37] selection:text-[#0B132B]">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axon Legal S.A.S. | Asesoría y Litigio Estratégico</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'axon-navy': '#0B132B',
+                        'axon-gold': '#D4AF37',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="bg-slate-900 border-b border-amber-500/30 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-amber-500 text-slate-950 font-black px-3 py-1.5 rounded text-sm tracking-wider">
+                    AXON LEGAL
+                </div>
+                <div>
+                    <span class="block text-xs font-bold text-amber-400">Axon Legal S.A.S.</span>
+                    <span class="block text-[10px] text-slate-400">axonglobal.org | Tel: +57 3180158629</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#sedes" class="hover:text-amber-400 transition">Sedes y Litigio</a>
+                <a href="#biblioteca" class="hover:text-amber-400 transition">Biblioteca Virtual</a>
+                <a href="#contacto" class="hover:text-amber-400 transition">Contacto y Pagos</a>
+            </nav>
+            <div>
+                <a href="mailto:legal@axonglobal.org" class="bg-amber-500 text-slate-950 px-4 py-2 rounded text-xs font-bold hover:bg-amber-400 transition">
+                    legal@axonglobal.org
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1">
+
+        <!-- HERO / PRESENTACIÓN -->
+        <section class="py-16 bg-gradient-to-b from-slate-900 to-slate-950 text-center px-4 border-b border-amber-500/20">
+            <div class="max-w-4xl mx-auto">
+                <span class="bg-amber-500/10 text-amber-400 border border-amber-500/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-4">
+                    Axon Global Tech S.A.S. &bull; Axon Legal S.A.S.
+                </span>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-amber-400 mb-4 tracking-tight">
+                    Conocimiento, Seguridad, Confianza, Justicia
+                </h1>
+                <p class="text-slate-300 text-base md:text-lg leading-relaxed mb-8">
+                    Firma líder en derecho público, penal, militar, civil y corporativo en Colombia. Respaldados bajo estricto secreto profesional y tecnología de vanguardia en <strong class="text-amber-400">axonglobal.org</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 1: SEDES Y DEFENSA TÉCNICA (Imágenes Corregidas con Fallback) -->
+        <section id="sedes" class="py-16 max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-amber-400">Nuestra Infraestructura y Litigio Estratégico</h2>
+                <div class="h-1 w-20 bg-amber-500 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Tarjeta 1: Sede Corporativa -->
+                <div class="bg-slate-900 border border-amber-500/30 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between">
+                    <div class="relative h-56 overflow-hidden bg-slate-950">
+                        <img 
+                            src="./assets/astudio/sede-bogota.jpg" 
+                            alt="Sede corporativa de Axon Legal en Bogotá" 
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                            onError="this.onerror=null; this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop';"
+                        />
+                        <div class="absolute top-3 left-3 bg-slate-950/85 text-amber-400 text-xs font-bold px-3 py-1 rounded border border-amber-500/40">
+                            Bogotá, D.C.
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-400 mb-2">Sede corporativa de Axon Legal en Bogotá</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Ubicados estratégicamente en el centro institucional de la capital, bajo el respaldo de <strong>Axon Global Tech S.A.S.</strong> Consultoría presencial y virtual en <strong>axonglobal.org</strong>.
+                        </p>
+                        <div class="text-xs text-slate-400 border-t border-slate-800 pt-3 flex justify-between items-center">
+                            <span>WhatsApp: +57 3180158629</span>
+                            <span class="text-amber-400 font-semibold">legal@axonglobal.org</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Defensa Técnica -->
+                <div class="bg-slate-900 border border-amber-500/30 rounded-xl overflow-hidden shadow-xl flex flex-col justify-between">
+                    <div class="relative h-56 overflow-hidden bg-slate-950">
+                        <img 
+                            src="./assets/astudio/defensa-tecnica.jpg" 
+                            alt="Defensa técnica de Axon Legal" 
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                            onError="this.onerror=null; this.src='https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800&auto=format&fit=crop';"
+                        />
+                        <div class="absolute top-3 left-3 bg-slate-950/85 text-amber-400 text-xs font-bold px-3 py-1 rounded border border-amber-500/40">
+                            Litigio Especializado
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-400 mb-2">Defensa técnica de Axon Legal</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Representación judicial y extrajudicial de máximo nivel con rigor científico y jurídico. Conocimiento, seguridad, confianza y justicia amparados bajo estricto secreto profesional.
+                        </p>
+                        <div class="text-xs text-slate-400 border-t border-slate-800 pt-3 flex justify-between items-center">
+                            <span>CEO: ceo@axonglobal.org</span>
+                            <span class="text-amber-400 font-semibold">Axon Legal S.A.S.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: BIBLIOTECA VIRTUAL (25 Códigos Normativos Funcionales) -->
+        <section id="biblioteca" class="py-16 bg-slate-900 border-t border-b border-amber-500/20">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-amber-400 mb-2">Biblioteca Virtual - Axon Legal S.A.S.</h2>
+                    <p class="text-slate-300 text-sm max-w-2xl mx-auto">
+                        Compendio normativo completo de la legislación colombiana. Descarga directa en formatos PDF y DOC respaldados en <strong class="text-amber-400">axonglobal.org</strong>.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Código Civil -->
+                    <div class="bg-slate-950 border border-amber-500/30 rounded-lg p-4 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <h4 class="text-amber-400 font-bold text-sm mb-1">Código Civil</h4>
+                            <p class="text-slate-400 text-xs mb-3">Personas, bienes y obligaciones.</p>
+                        </div>
+                        <div class="flex gap-2 pt-3 border-t border-slate-900">
+                            <a href="./assets/astudio/libros/código_civil (1).pdf" download class="flex-1 bg-amber-500 text-slate-950 text-center font-bold py-1.5 rounded text-[11px] hover:bg-amber-400 transition">PDF</a>
+                            <a href="./assets/astudio/libros/código_civil (1).doc" download class="flex-1 bg-slate-900 text-amber-400 text-center font-bold py-1.5 rounded text-[11px] border border-amber-500/40 hover:bg-slate-800 transition">DOC</a>
+                        </div>
+                    </div>
+
+                    <!-- Código Penal -->
+                    <div class="bg-slate-950 border border-amber-500/30 rounded-lg p-4 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <h4 class="text-amber-400 font-bold text-sm mb-1">Código Penal</h4>
+                            <p class="text-slate-400 text-xs mb-3">Conductas punibles y penas.</p>
+                        </div>
+                        <div class="flex gap-2 pt-3 border-t border-slate-900">
+                            <a href="./assets/astudio/libros/código_penal.pdf" download class="flex-1 bg-amber-500 text-slate-950 text-center font-bold py-1.5 rounded text-[11px] hover:bg-amber-400 transition">PDF</a>
+                            <a href="./assets/astudio/libros/código_penal.doc" download class="flex-1 bg-slate-900 text-amber-400 text-center font-bold py-1.5 rounded text-[11px] border border-amber-500/40 hover:bg-slate-800 transition">DOC</a>
+                        </div>
+                    </div>
+
+                    <!-- Código General del Proceso -->
+                    <div class="bg-slate-950 border border-amber-500/30 rounded-lg p-4 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <h4 class="text-amber-400 font-bold text-sm mb-1">Código Gral. del Proceso</h4>
+                            <p class="text-slate-400 text-xs mb-3">Procesal e Insolvencia.</p>
+                        </div>
+                        <div class="flex gap-2 pt-3 border-t border-slate-900">
+                            <a href="./assets/astudio/libros/código_general_del_proceso.pdf" download class="flex-1 bg-amber-500 text-slate-950 text-center font-bold py-1.5 rounded text-[11px] hover:bg-amber-400 transition">PDF</a>
+                            <a href="./assets/astudio/libros/código_general_del_proceso.doc" download class="flex-1 bg-slate-900 text-amber-400 text-center font-bold py-1.5 rounded text-[11px] border border-amber-500/40 hover:bg-slate-800 transition">DOC</a>
+                        </div>
+                    </div>
+
+                    <!-- Código Penal Militar -->
+                    <div class="bg-slate-950 border border-amber-500/30 rounded-lg p-4 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <h4 class="text-amber-400 font-bold text-sm mb-1">Código Penal Militar</h4>
+                            <p class="text-slate-400 text-xs mb-3">Fuero militar y justicia.</p>
+                        </div>
+                        <div class="flex gap-2 pt-3 border-t border-slate-900">
+                            <a href="./assets/astudio/libros/código_penal_militar.pdf" download class="flex-1 bg-amber-500 text-slate-950 text-center font-bold py-1.5 rounded text-[11px] hover:bg-amber-400 transition">PDF</a>
+                            <a href="./assets/astudio/libros/código_penal_militar.doc" download class="flex-1 bg-slate-900 text-amber-400 text-center font-bold py-1.5 rounded text-[11px] border border-amber-500/40 hover:bg-slate-800 transition">DOC</a>
+                        </div>
+                    </div>
+
+                    <!-- Código de Comercio -->
+                    <div class="bg-slate-950 border border-amber-500/30 rounded-lg p-4 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <h4 class="text-amber-400 font-bold text-sm mb-1">Código de Comercio</h4>
+                            <p class="text-slate-400 text-xs mb-3">Sociedades y mercantil.</p>
+                        </div>
+                        <div class="flex gap-2 pt-3 border-t border-slate-900">
+                            <a href="./assets/astudio/libros/código_de_comercio.pdf" download class="flex-1 bg-amber-500 text-slate-950 text-center font-bold py-1.5 rounded text-[11px] hover:bg-amber-400 transition">PDF</a>
+                            <a href="./assets/astudio/libros/código_de_comercio.doc" download class="flex-1 bg-slate-900 text-amber-400 text-center font-bold py-1.5 rounded text-[11px] border border-amber-500/40 hover:bg-slate-800 transition">DOC</a>
+                        </div>
+                    </div>
+
+                    <!-- Código Nacional de Policía -->
+                    <div class="bg-slate-950 border border-amber-500/30 rounded-lg p-4 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <h4 class="text-amber-400 font-bold text-sm mb-1">Código de Policía</h4>
+                            <p class="text-slate-400 text-xs mb-3">Convivencia ciudadana.</p>
+                        </div>
+                        <div class="flex gap-2 pt-3 border-t border-slate-900">
+                            <a href="./assets/astudio/libros/código_nacional_de_policía_y_convivencia.pdf" download class="flex-1 bg-amber-500 text-slate-950 text-center font-bold py-1.5 rounded text-[11px] hover:bg-amber-400 transition">PDF</a>
+                            <a href="./assets/astudio/libros/código_nacional_de_policía_y_convivencia.doc" download class="flex-1 bg-slate-900 text-amber-400 text-center font-bold py-1.5 rounded text-[11px] border border-amber-500/40 hover:bg-slate-800 transition">DOC</a>
+                        </div>
+                    </div>
+
+                    <!-- Código Sustantivo del Trabajo -->
+                    <div class="bg-slate-950 border border-amber-500/30 rounded-lg p-4 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <h4 class="text-amber-400 font-bold text-sm mb-1">Código Sustantivo Trabajo</h4>
+                            <p class="text-slate-400 text-xs mb-3">Relaciones laborales.</p>
+                        </div>
+                        <div class="flex gap-2 pt-3 border-t border-slate-900">
+                            <a href="./assets/astudio/libros/código_sustantivo_del_trabajo.pdf" download class="flex-1 bg-amber-500 text-slate-950 text-center font-bold py-1.5 rounded text-[11px] hover:bg-amber-400 transition">PDF</a>
+                            <a href="./assets/astudio/libros/código_sustantivo_del_trabajo.doc" download class="flex-1 bg-slate-900 text-amber-400 text-center font-bold py-1.5 rounded text-[11px] border border-amber-500/40 hover:bg-slate-800 transition">DOC</a>
+                        </div>
+                    </div>
+
+                    <!-- Código de Infancia y Adolescencia -->
+                    <div class="bg-slate-950 border border-amber-500/30 rounded-lg p-4 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <h4 class="text-amber-400 font-bold text-sm mb-1">Código Infancia</h4>
+                            <p class="text-slate-400 text-xs mb-3">Protección de menores.</p>
+                        </div>
+                        <div class="flex gap-2 pt-3 border-t border-slate-900">
+                            <a href="./assets/astudio/libros/código_de_la_infancia_y_la_adolescencia.pdf" download class="flex-1 bg-amber-500 text-slate-950 text-center font-bold py-1.5 rounded text-[11px] hover:bg-amber-400 transition">PDF</a>
+                            <a href="./assets/astudio/libros/código_de_la_infancia_y_la_adolescencia.doc" download class="flex-1 bg-slate-900 text-amber-400 text-center font-bold py-1.5 rounded text-[11px] border border-amber-500/40 hover:bg-slate-800 transition">DOC</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: WIDGET DE CHAT ESPECIALIZADO (Dos Capas y Secreto Profesional) -->
+        <section id="contacto" class="py-16 max-w-3xl mx-auto px-4">
+            <div class="bg-slate-900 border border-amber-500/40 rounded-xl p-6 shadow-2xl">
+                <div class="flex justify-between items-center border-b border-amber-500/20 pb-4 mb-4">
+                    <div>
+                        <h3 class="font-bold text-amber-400 text-base">Dra. Andrea Morales - Axon Legal S.A.S.</h3>
+                        <span class="text-xs text-slate-400">Chat con agente especializado | axonglobal.org</span>
+                    </div>
+                    <span class="bg-amber-500/10 text-amber-400 text-xs px-2.5 py-1 rounded border border-amber-500/30">Activo 24/7</span>
+                </div>
+
+                <div id="chat-messages" class="h-64 overflow-y-auto space-y-3 mb-4 pr-2 text-sm bg-slate-950 p-4 rounded-lg border border-slate-800">
+                    <div class="bg-slate-900 p-3 rounded border border-slate-800 text-slate-200">
+                        Bienvenido a Axon Legal S.A.S. Conversación amparada bajo estricto secreto profesional (reserva cliente-abogado). Describa su situación jurídica (ej. embargos, penal militar, civil, laboral, insolvencia)...
+                    </div>
+                </div>
+
+                <!-- Capa 2: Formulario de Reserva y Pago -->
+                <div id="payment-layer" class="hidden bg-slate-950 p-4 rounded-lg border border-amber-500/50 mb-4 space-y-3 text-xs">
+                    <p class="text-amber-300 font-bold">Formulario de Reserva Legal y Asesoría Especializada ($150k - $200k COP):</p>
+                    <input type="text" id="c-name" placeholder="Nombre completo" class="w-full p-2 bg-slate-900 border border-slate-700 rounded text-slate-200 outline-none focus:border-amber-500" />
+                    <input type="text" id="c-id" placeholder="Número de Cédula" class="w-full p-2 bg-slate-900 border border-slate-700 rounded text-slate-200 outline-none focus:border-amber-500" />
+                    <input type="text" id="c-phone" placeholder="Teléfono / WhatsApp (+57...)" class="w-full p-2 bg-slate-900 border border-slate-700 rounded text-slate-200 outline-none focus:border-amber-500" />
+                    <input type="email" id="c-email" placeholder="Correo electrónico y dirección" class="w-full p-2 bg-slate-900 border border-slate-700 rounded text-slate-200 outline-none focus:border-amber-500" />
+                    <input type="text" id="c-time" placeholder="Horario de preferencia para contacto" class="w-full p-2 bg-slate-900 border border-slate-700 rounded text-slate-200 outline-none focus:border-amber-500" />
+                    <a href="https://pay.bold.co" target="_blank" rel="noreferrer" class="block bg-amber-500 text-slate-950 text-center font-bold py-2.5 rounded hover:bg-amber-400 transition">
+                        Pagar Tarifa Especializada ($150k - $200k COP)
+                    </a>
+                </div>
+
+                <div class="flex gap-2">
+                    <input 
+                        type="text" 
+                        id="chat-input" 
+                        placeholder="Describa su caso o consulta jurídica..." 
+                        class="flex-1 bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-sm text-slate-200 focus:outline-none focus:border-amber-500"
+                    />
+                    <button onclick="enviarMensajeChat()" class="bg-amber-500 text-slate-950 px-5 py-2.5 rounded-lg font-bold hover:bg-amber-400 transition text-sm">
+                        Enviar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER CORPORATIVO -->
+    <footer class="bg-slate-900 border-t border-amber-500/30 py-8 text-center text-xs text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p class="font-bold text-amber-400">Axon Global Tech S.A.S. &bull; Axon Legal S.A.S. &bull; axonglobal.org</p>
+            <p>Sede Principal Bogotá, D.C. | Teléfono y WhatsApp: +57 3180158629 | Contacto Legal: legal@axonglobal.org | CEO: ceo@axonglobal.org</p>
+            <p class="text-slate-500 pt-2">&copy; 2026 Axon Legal S.A.S. Todos los derechos reservados. Conocimiento, seguridad, confianza, justicia.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE LÓGICA DE DOS CAPAS PARA EL CHAT -->
+    <script>
+        let chatStep = 1;
+        function enviarMensajeChat() {
+            const input = document.getElementById('chat-input');
+            const container = document.getElementById('chat-messages');
+            if(!input.value.trim()) return;
+
+            container.innerHTML += `<div class="bg-amber-500/20 p-2.5 rounded-lg ml-auto max-w-[85%] text-right text-slate-100">${input.value}</div>`;
+            input.value = '';
+            container.scrollTop = container.scrollHeight;
+
+            setTimeout(() => {
+                if(chatStep === 1) {
+                    container.innerHTML += `<div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 text-slate-300">Hemos registrado su consulta preliminar bajo absoluta reserva legal y secreto profesional. Para avanzar hacia una asesoría técnica especializada y un estudio de caso riguroso por parte de nuestros socios directores, por favor diligencie sus datos básicos en el formulario y efectúe la tarifa (entre $150.000 y $200.000 COP).</div>`;
+                    document.getElementById('payment-layer').classList.remove('hidden');
+                    chatStep = 2;
+                } else {
+                    container.innerHTML += `<div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 text-slate-300">Por favor, complete sus datos y realice el pago seguro mediante nuestra pasarela Bold o PayPal para activar el canal prioritario.</div>`;
+                }
+                container.scrollTop = container.scrollHeight;
+            }, 1000);
+        }
+    </script>
+</body>
 </html>
-<!-- Sección de Tarjetas Principales (Sede y Defensa Técnica con imágenes corregidas y respaldos visuales) -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
-    
-    <!-- Tarjeta 1: Sede Corporativa -->
-    <div class="bg-slate-900 border border-amber-500/30 rounded-xl overflow-hidden shadow-lg flex flex-col justify-between">
-        <div class="relative h-56 overflow-hidden bg-slate-950">
-            <img 
-                src="./assets/astudio/sede-bogota.jpg" 
-                alt="Sede corporativa de AXON Legal en Bogotá" 
-                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                onError="this.onerror=null; this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop';"
-            />
-            <div class="absolute top-3 left-3 bg-slate-950/80 text-amber-400 text-xs font-bold px-3 py-1 rounded border border-amber-500/40">
-                Bogotá, D.C.
-            </div>
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-bold text-amber-400 mb-2">Sede corporativa de AXON Legal en Bogotá</h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                Ubicados estratégicamente en el centro neurálgico e institucional de la capital, bajo el respaldo de <strong>Axon Global Tech S.A.S.</strong> Litigio estratégico y consultoría presencial y virtual en <strong>axonglobal.org</strong>.
-            </p>
-            <div class="text-xs text-slate-400 border-t border-slate-800 pt-3 flex justify-between items-center">
-                <span>Contacto: +57 3180158629</span>
-                <span class="text-amber-400 font-semibold">legal@axonglobal.org</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Tarjeta 2: Defensa Técnica -->
-    <div class="bg-slate-900 border border-amber-500/30 rounded-xl overflow-hidden shadow-lg flex flex-col justify-between">
-        <div class="relative h-56 overflow-hidden bg-slate-950">
-            <img 
-                src="./assets/astudio/defensa-tecnica.jpg" 
-                alt="Defensa técnica de AXON Legal" 
-                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                onError="this.onerror=null; this.src='https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800&auto=format&fit=crop';"
-            />
-            <div class="absolute top-3 left-3 bg-slate-950/80 text-amber-400 text-xs font-bold px-3 py-1 rounded border border-amber-500/40">
-                Litigio Especializado
-            </div>
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-bold text-amber-400 mb-2">Defensa técnica de AXON Legal</h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                Representación judicial y extrajudicial de máximo nivel con rigor científico y jurídico. Con conocimiento, seguridad, confianza y justicia amparados bajo estricto secreto profesional.
-            </p>
-            <div class="text-xs text-slate-400 border-t border-slate-800 pt-3 flex justify-between items-center">
-                <span>CEO: ceo@axonglobal.org</span>
-                <span class="text-amber-400 font-semibold">Axon Legal S.A.S.</span>
-            </div>
-        </div>
-    </div>
-
-</div>

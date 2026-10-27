@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "tidy-bounty-512402-n2-17669"
+  },
+  "targets": {
+    "tidy-bounty-512402-n2": {
+      "hosting": {
+        "primary": [
+          "tidy-bounty-512402-n2"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
