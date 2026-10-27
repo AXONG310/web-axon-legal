@@ -104,6 +104,25 @@ const codigosNormativos: LibroCodigo[] = [
 ];
 
 export function BibliotecaVirtual() {
+  const handleDownload = async (url: string, filename: string) => {
+    try {
+      const response = await fetch(url);
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      console.error("Error al descargar el archivo:", error);
+      // Fallback de respaldo si fetch falla
+      window.open(url, '_blank');
+    }
+  };
+
   return (
     <section id="biblioteca" className="py-20 bg-[#070B14] text-slate-100 border-t border-[#D4AF37]/20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -120,45 +139,43 @@ export function BibliotecaVirtual() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {codigosNormativos.map((codigo, index) => (
-            <div key={index} className="bg-slate-900 border border-[#D4AF37]/30 rounded-xl p-6 flex flex-col justify-between shadow-xl hover:border-[#D4AF37] transition-all">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37]">
-                    <BookOpen className="w-5 h-5" />
-                  </div>
-                  <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest bg-slate-950 px-2.5 py-1 rounded border border-slate-800">
-                    Normativa Vigente
-                  </span>
-                </div>
-                <h3 className="text-lg font-bold text-[#D4AF37] mb-1">{codigo.titulo}</h3>
-                <span className="text-xs text-slate-400 font-semibold block mb-3">{codigo.subtitulo}</span>
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">{codigo.descripcion}</p>
-              </div>
+          {codigosNormativos.map((codigo, index) => {
+            const pdfFilename = codigo.pdfUrl.split('/').pop() || 'codigo.pdf';
+            const docFilename = codigo.docUrl.split('/').pop() || 'codigo.doc';
 
-              <div className="flex gap-3 pt-4 border-t border-slate-800">
-                {/* Reemplazo por etiquetas nativas <a> para descarga directa */}
-                <a 
-                  href={codigo.pdfUrl}
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-[#D4AF37] hover:bg-amber-400 text-[#0B132B] font-bold py-2.5 px-3 rounded-lg text-xs text-center flex items-center justify-center gap-1.5 transition cursor-pointer"
-                >
-                  <Download className="w-3.5 h-3.5" /> PDF
-                </a>
-                <a 
-                  href={codigo.docUrl}
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold py-2.5 px-3 rounded-lg text-xs text-center flex items-center justify-center gap-1.5 border border-slate-700 transition cursor-pointer"
-                >
-                  <FileText className="w-3.5 h-3.5 text-[#D4AF37]" /> DOC
-                </a>
+            return (
+              <div key={index} className="bg-slate-900 border border-[#D4AF37]/30 rounded-xl p-6 flex flex-col justify-between shadow-xl hover:border-[#D4AF37] transition-all">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37]">
+                      <BookOpen className="w-5 h-5" />
+                    </div>
+                    <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest bg-slate-950 px-2.5 py-1 rounded border border-slate-800">
+                      Normativa Vigente
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-bold text-[#D4AF37] mb-1">{codigo.titulo}</h3>
+                  <span className="text-xs text-slate-400 font-semibold block mb-3">{codigo.subtitulo}</span>
+                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">{codigo.descripcion}</p>
+                </div>
+
+                <div className="flex gap-3 pt-4 border-t border-slate-800">
+                  <button 
+                    onClick={() => handleDownload(codigo.pdfUrl, pdfFilename)}
+                    className="flex-1 bg-[#D4AF37] hover:bg-amber-400 text-[#0B132B] font-bold py-2.5 px-3 rounded-lg text-xs text-center flex items-center justify-center gap-1.5 transition cursor-pointer"
+                  >
+                    <Download className="w-3.5 h-3.5" /> PDF
+                  </button>
+                  <button 
+                    onClick={() => handleDownload(codigo.docUrl, docFilename)}
+                    className="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold py-2.5 px-3 rounded-lg text-xs text-center flex items-center justify-center gap-1.5 border border-slate-700 transition cursor-pointer"
+                  >
+                    <FileText className="w-3.5 h-3.5 text-[#D4AF37]" /> DOC
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
