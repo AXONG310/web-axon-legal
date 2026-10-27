@@ -35,12 +35,12 @@ export function HeroSection({ onOpenConsultant, onOpenEvaluator }: HeroSectionPr
               rel="noopener noreferrer"
               className="bg-slate-900 border border-[#D4AF37]/40 text-slate-200 font-bold px-6 py-3 rounded-lg hover:bg-slate-800 transition-all"
             >
-              WhatsApp (+57 318 0158629)
+              WhatsApp (+573180158629)
             </a>
           </div>
         </div>
 
-        {/* Tarjetas de Sede y Defensa Técnica con Imágenes Verificadas */}
+        {/* Tarjetas de Sede y Defensa Técnica */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
           
           {/* Tarjeta 1: Sede Bogotá */}
@@ -61,7 +61,7 @@ export function HeroSection({ onOpenConsultant, onOpenEvaluator }: HeroSectionPr
                 Ubicados estratégicamente en el centro institucional de la capital, bajo el respaldo de <strong>Axon Global Tech S.A.S.</strong> Litigio estratégico en <strong>axonglobal.org</strong>.
               </p>
               <div className="text-xs text-slate-400 border-t border-slate-800 pt-3 flex justify-between items-center">
-                <span>Tel / WhatsApp: +57 3180158629</span>
+                <span>Tel / WhatsApp: +573180158629</span>
                 <span className="text-[#D4AF37] font-semibold">legal@axonglobal.org</span>
               </div>
             </div>
