@@ -1,5 +1,7 @@
 import React from 'react';
 import { ShieldCheck, MapPin } from 'lucide-react';
+import sedeBogotaImg from '../assets/images/hero_legal_firm_179254173260.jpg';
+import defensaLegalImg from '../assets/images/legal_defense_counsel_1792541731898.jpg';
 
 interface HeroSectionProps {
   onOpenConsultant: () => void;
@@ -40,14 +42,14 @@ export function HeroSection({ onOpenConsultant, onOpenEvaluator }: HeroSectionPr
           </div>
         </div>
 
-        {/* Tarjetas de Sede y Defensa Técnica */}
+        {/* Tarjetas Principales con Imágenes Locales Correctas */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
           
           {/* Tarjeta 1: Sede Bogotá */}
           <div className="bg-slate-900 border border-[#D4AF37]/30 rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between">
             <div className="relative h-64 overflow-hidden bg-slate-950">
               <img 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" 
+                src={sedeBogotaImg} 
                 alt="Sede corporativa de Axon Legal en Bogotá" 
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
               />
@@ -67,11 +69,11 @@ export function HeroSection({ onOpenConsultant, onOpenEvaluator }: HeroSectionPr
             </div>
           </div>
 
-          {/* Tarjeta 2: Defensa Técnica */}
+          {/* Tarjeta 2: Defensa Técnica / Litigio Estratégico */}
           <div className="bg-slate-900 border border-[#D4AF37]/30 rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between">
             <div className="relative h-64 overflow-hidden bg-slate-950">
               <img 
-                src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop" 
+                src={defensaLegalImg} 
                 alt="Defensa técnica de Axon Legal" 
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
               />

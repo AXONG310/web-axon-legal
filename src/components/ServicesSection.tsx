@@ -24,7 +24,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenConsulta
             Especialidades jurídicas diseñadas para ganar y proteger su futuro.
           </h2>
           <p className="text-slate-400 text-base sm:text-lg mt-4 leading-relaxed">
-            En AXON Legal no improvisamos. Desplegamos estrategias procesales probadas en los juzgados y tribunales de Colombia, con dedicación exclusiva y acompañamiento continuo.
+            En Axon Legal no improvisamos. Desplegamos estrategias procesales probadas en los juzgados y tribunales de Colombia, con dedicación exclusiva y acompañamiento continuo.
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenConsulta
             <div className="relative h-64 sm:h-72 overflow-hidden">
               <img
                 src="/src/assets/images/legal_defense_counsel_1792541731898.jpg"
-                alt="Defensa técnica de AXON Legal"
+                alt="Defensa técnica de Axon Legal"
                 className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />

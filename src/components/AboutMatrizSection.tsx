@@ -23,11 +23,11 @@ export const AboutMatrizSection: React.FC = () => {
             </h2>
 
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
-              <strong className="text-white font-semibold">AXON Legal</strong> no opera de manera aislada ni como una asesoría particular improvisada. Somos la división especializada de <strong className="text-white font-semibold">AXON Global S.A.S.</strong>, una organización estructurada bajo los más exigentes estándares de auditoría jurídica, confidencialidad y ética corporativa.
+              <strong className="text-white font-semibold">Axon Legal</strong> no opera de manera aislada ni como una asesoría particular improvisada. Somos la división especializada de <strong className="text-white font-semibold">Axon Global Tech Tech Tech Tech Tech Tech Tech Tech Tech S.A.S.</strong>, una organización estructurada bajo los más exigentes estándares de auditoría jurídica, confidencialidad y ética corporativa.
             </p>
 
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
-              Al elegir a AXON Legal, usted contrata a un equipo de litigantes y consultores sénior que audita, supervisa y respalda cada memorial, recurso y audiencia judicial, garantizando que su patrimonio y su hoja de vida queden absolutamente protegidos.
+              Al elegir a Axon Legal, usted contrata a un equipo de litigantes y consultores sénior que audita, supervisa y respalda cada memorial, recurso y audiencia judicial, garantizando que su patrimonio y su hoja de vida queden absolutamente protegidos.
             </p>
 
             <div className="pt-2 grid sm:grid-cols-2 gap-3 text-xs text-slate-300">
@@ -97,7 +97,7 @@ export const AboutMatrizSection: React.FC = () => {
                 Visión Corporativa
               </h4>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Estructura societaria, solvencia y estándares de AXON Global.
+                Estructura societaria, solvencia y estándares de Axon Global Tech Tech Tech Tech Tech Tech Tech Tech Tech.
               </p>
             </div>
 

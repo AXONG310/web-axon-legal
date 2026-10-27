@@ -38,7 +38,7 @@ export const PaymentGatewaySection: React.FC = () => {
               </h2>
 
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-                Para formalizar la contratación de su defensa técnica, cubrir honorarios de apoderamiento o realizar aportes a nuestra labor social de democratización legal, AXON Legal dispone de canales bancarios integrados con la red <strong className="text-white font-semibold">Bre-B de Colombia</strong>.
+                Para formalizar la contratación de su defensa técnica, cubrir honorarios de apoderamiento o realizar aportes a nuestra labor social de democratización legal, Axon Legal dispone de canales bancarios integrados con la red <strong className="text-white font-semibold">Bre-B de Colombia</strong>.
               </p>
 
               <div className="space-y-3 pt-2 text-xs text-slate-300">
@@ -59,7 +59,7 @@ export const PaymentGatewaySection: React.FC = () => {
 
             <div className="mt-8 pt-6 border-t border-slate-800/80">
               <a
-                href="https://wa.me/573180158629?text=Hola%20AXON%20Legal,%20adjunto%20mi%20comprobante%20de%20pago%20para%20radicaci%C3%B3n%20formal%20de%20mi%20caso."
+                href="https://wa.me/573180158629?text=Hola%20Axon%20Legal,%20adjunto%20mi%20comprobante%20de%20pago%20para%20radicaci%C3%B3n%20formal%20de%20mi%20caso."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
@@ -118,7 +118,7 @@ export const PaymentGatewaySection: React.FC = () => {
                 ) : (
                   <img
                     src={currentBank.qrImage}
-                    alt={`Código QR ${currentBank.name} AXON Legal`}
+                    alt={`Código QR ${currentBank.name} Axon Legal`}
                     className="w-full h-full object-contain rounded-lg"
                     referrerPolicy="no-referrer"
                   />

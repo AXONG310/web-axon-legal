@@ -23,16 +23,16 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-extrabold tracking-wider text-white">
-                  AXON<span className="text-[#D4AF37] ml-1">LEGAL</span>
+                  Axon<span className="text-[#D4AF37] ml-1">LEGAL</span>
                 </span>
                 <span className="text-[10px] tracking-widest text-slate-400 font-medium uppercase">
-                  División de AXON Global S.A.S.
+                  División de Axon Global TechS.A.S.
                 </span>
               </div>
             </div>
 
             <p className="text-slate-400 leading-relaxed max-w-sm">
-              <strong className="text-slate-300">AXON Legal</strong> es una marca registrada y la división jurídica estratégica perteneciente a <strong>AXON Global S.A.S.</strong> Brindamos conocimiento, seguridad, confianza y justicia, salvaguardando el patrimonio y los derechos de nuestros clientes con los más altos estándares éticos.
+              <strong className="text-slate-300">Axon Legal</strong> es una marca registrada y la división jurídica estratégica perteneciente a <strong>Axon Global Tech S.A.S.</strong> Brindamos conocimiento, seguridad, confianza y justicia, salvaguardando el patrimonio y los derechos de nuestros clientes con los más altos estándares éticos.
             </p>
 
             <div className="flex items-center gap-2 text-slate-500 pt-1">
@@ -113,7 +113,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
-          <p>© {new Date().getFullYear()} AXON Global S.A.S. División AXON Legal. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} Axon Global Tech S.A.S. División Axon Legal. Todos los derechos reservados.</p>
           <div className="flex items-center gap-4">
             <span className="text-[11px]">Bogotá D.C. · Cobertura Nacional en Colombia</span>
             <button
