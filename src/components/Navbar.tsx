@@ -23,10 +23,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultant, onOpenEvaluato
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-extrabold tracking-wider text-white font-['Plus_Jakarta_Sans']">
-                AXON<span className="text-[#D4AF37] ml-1">LEGAL</span>
+                Axon<span className="text-[#D4AF37] ml-1">Legal</span>
               </span>
               <span className="text-[10px] tracking-widest text-slate-400 font-medium uppercase -mt-0.5">
-                División AXON Global S.A.S.
+                División Axon Global S.A.S.
               </span>
             </div>
           </a>

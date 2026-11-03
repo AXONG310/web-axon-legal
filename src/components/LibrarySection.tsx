@@ -1,99 +1,68 @@
+// web axon legal/src/components/Biblioteca.tsx
 import React from 'react';
-import { Download, BookOpen, FileText } from 'lucide-react';
 
-interface LibrarySectionProps {
-  onSelectCodeForConsultant: (codeName: string) => void;
+// Estructura de los datos para los documentos de la biblioteca
+interface DocumentoLegal {
+  id: string;
+  titulo: string;
+  descripcion: string;
+  rutaPdf: string;
+  rutaWord: string;
 }
 
-export function LibrarySection({ onSelectCodeForConsultant }: LibrarySectionProps) {
-  const codigosNormativos = [
-    {
-      titulo: "Código Civil Colombiano",
-      descripcion: "Estatuto matriz que regula los derechos de las personas, obligaciones, contratos, bienes, sucesiones y testamentos.",
-      pdfUrl: "/assets/astudio/libros/código_civil (1).pdf",
-      docUrl: "/assets/astudio/libros/código_civil (1).doc"
-    },
-    {
-      titulo: "Código Penal Colombiano",
-      descripcion: "Catálogo de conductas punibles ordinarias, penas principales, medidas de seguridad y circunstancias de agravación.",
-      pdfUrl: "/assets/astudio/libros/código_penal.pdf",
-      docUrl: "/assets/astudio/libros/código_penal.doc"
-    },
-    {
-      titulo: "Código General del Proceso",
-      descripcion: "Norma procesal civil, comercial y de familia. Incluye el Título IV con el régimen de Insolvencia de Persona Natural.",
-      pdfUrl: "/assets/astudio/libros/código_general_del_proceso.pdf",
-      docUrl: "/assets/astudio/libros/código_general_del_proceso.doc"
-    },
-    {
-      titulo: "Código Penal Militar",
-      descripcion: "Régimen punitivo especial aplicable a los miembros de la Fuerza Pública (Ejército, Armada, Fuerza Aérea y Policía Nacional).",
-      pdfUrl: "/assets/astudio/libros/código_penal_militar.pdf",
-      docUrl: "/assets/astudio/libros/código_penal_militar.doc"
-    },
-    {
-      titulo: "Código Nal. de Policía y Convivencia",
-      descripcion: "Disposiciones orientadas a la convivencia pacífica, facultades de la Policía Nacional, órdenes de comparendo y medidas.",
-      pdfUrl: "/assets/astudio/libros/código_nacional_de_policía_y_convivencia.pdf",
-      docUrl: "/assets/astudio/libros/código_nacional_de_policía_y_convivencia.doc"
-    }
-  ];
+// Asegúrate de que los nombres de archivo coincidan exactamente con los que subas a la carpeta public/biblioteca/
+const documentos: DocumentoLegal[] = [
+  {
+    id: '1',
+    titulo: 'Código Civil Colombiano',
+    descripcion: 'Normativa actualizada. Descarga gratuita en el formato de su preferencia.',
+    rutaPdf: '/biblioteca/codigo-civil.pdf', // Ruta basada en la carpeta public/
+    rutaWord: '/biblioteca/codigo-civil.docx',
+  },
+  // Puedes agregar más libros o códigos aquí copiando el bloque anterior
+];
 
+export const Biblioteca: React.FC = () => {
   return (
-    <section id="biblioteca" className="py-24 bg-[#070B14] text-slate-100 border-t border-b border-[#D4AF37]/20 relative z-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <span className="bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/30 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-4">
-            Axon Global Tech S.A.S. &bull; Axon Legal S.A.S.
-          </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-[#D4AF37] mb-4">
-            Biblioteca Virtual - Axon Legal S.A.S.
-          </h2>
-          <p className="text-slate-300 text-base md:text-lg leading-relaxed">
-            Consulte y descargue directamente los compendios normativos y códigos matrices de la legislación colombiana. Conocimiento, seguridad, confianza y justicia en <strong className="text-[#D4AF37]">axonglobal.org</strong>.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {codigosNormativos.map((codigo, index) => (
-            <div key={index} className="bg-slate-900 border border-[#D4AF37]/30 rounded-xl p-6 shadow-xl flex flex-col justify-between hover:border-[#D4AF37] transition-all group">
-              <div>
-                <h3 className="text-[#D4AF37] font-bold text-lg mb-2 flex items-center gap-2">
-                  <BookOpen className="w-5 h-5 text-[#D4AF37]" /> {codigo.titulo}
-                </h3>
-                <p className="text-slate-300 text-xs leading-relaxed mb-6">{codigo.descripcion}</p>
-              </div>
+    <div className="w-full max-w-5xl mx-auto p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+      <h2 className="text-2xl font-bold text-[#002B5B] mb-6 border-b pb-4">
+        Biblioteca Gratuita Axon Legal
+      </h2>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {documentos.map((doc) => (
+          <div key={doc.id} className="p-5 border border-gray-200 rounded-lg hover:shadow-md transition-shadow bg-gray-50">
+            <h3 className="text-xl font-bold text-gray-800">{doc.titulo}</h3>
+            <p className="text-gray-600 mt-2 mb-5 text-sm">{doc.descripcion}</p>
+            
+            <div className="flex flex-col sm:flex-row gap-3 mt-auto">
+              {/* Botón de descarga PDF */}
+              <a
+                href={doc.rutaPdf}
+                download={`AxonLegal_${doc.titulo.replace(/\s+/g, '_')}.pdf`}
+                className="flex-1 flex justify-center items-center gap-2 px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition-colors text-sm"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Descargar PDF
+              </a>
               
-              <div className="flex flex-col gap-2.5 pt-4 border-t border-slate-800">
-                <div className="flex gap-2">
-                  <a 
-                    href={codigo.pdfUrl} 
-                    download 
-                    className="flex-1 bg-[#D4AF37] text-[#0B132B] text-center font-bold py-2 px-3 rounded-lg text-xs hover:bg-amber-400 transition flex items-center justify-center gap-1.5 cursor-pointer"
-                  >
-                    <Download className="w-3.5 h-3.5" /> PDF
-                  </a>
-                  <a 
-                    href={codigo.docUrl} 
-                    download 
-                    className="flex-1 bg-slate-800 text-[#D4AF37] text-center font-bold py-2 px-3 rounded-lg text-xs border border-[#D4AF37]/40 hover:bg-slate-700 transition flex items-center justify-center gap-1.5 cursor-pointer"
-                  >
-                    <Download className="w-3.5 h-3.5" /> DOC
-                  </a>
-                </div>
-                <button 
-                  onClick={() => onSelectCodeForConsultant(codigo.titulo)}
-                  className="w-full bg-[#0B132B] text-slate-200 border border-[#D4AF37]/30 py-2 rounded-lg text-xs font-semibold hover:bg-slate-950 transition cursor-pointer"
-                >
-                  Consultar sobre este código
-                </button>
-              </div>
+              {/* Botón de descarga Word */}
+              <a
+                href={doc.rutaWord}
+                download={`AxonLegal_${doc.titulo.replace(/\s+/g, '_')}.docx`}
+                className="flex-1 flex justify-center items-center gap-2 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition-colors text-sm"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Descargar Word
+              </a>
             </div>
-          ))}
-        </div>
-
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
-}
+};

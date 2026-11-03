@@ -65,7 +65,7 @@ export const ContactSection: React.FC = () => {
 
   const getWhatsAppContactUrl = () => {
     const text = encodeURIComponent(
-      `Hola AXON Legal, soy ${nombre || 'un cliente'}. Radico formalmente mi consulta para el área de ${servicio}:\nTeléfono: ${telefono}\nMensaje: ${mensaje || 'Requiero valoración urgente.'}`
+      `Hola Axon Legal, soy ${nombre || 'un cliente'}. Radico formalmente mi consulta para el área de ${servicio}:\nTeléfono: ${telefono}\nMensaje: ${mensaje || 'Requiero valoración urgente.'}`
     );
     return `https://wa.me/573180158629?text=${text}`;
   };
@@ -333,7 +333,7 @@ export const ContactSection: React.FC = () => {
                 </button>
 
                 <p className="text-center text-[11px] text-slate-500 mt-2">
-                  Al enviar este formulario acepta los términos éticos y de reserva legal de AXON Global S.A.S.
+                  Al enviar este formulario acepta los términos éticos y de reserva legal de Axon Global Tech S.A.S.
                 </p>
               </form>
             )}

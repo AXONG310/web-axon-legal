@@ -3,7 +3,7 @@ import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { ServicesSection } from './components/ServicesSection';
 import { AboutMatrizSection } from './components/AboutMatrizSection';
-import { LibrarySection } from './components/LibrarySection';
+import { BibliotecaVirtual } from './components/BibliotecaVirtual';
 import { PaymentGatewaySection } from './components/PaymentGatewaySection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -29,10 +29,6 @@ export default function App() {
 
   const handleCloseEvaluator = () => {
     setIsEvaluatorOpen(false);
-  };
-
-  const handleSelectCodeForConsultant = (codeName: string) => {
-    setIsConsultantOpen(true);
   };
 
   const scrollToPayments = () => {
@@ -67,9 +63,7 @@ export default function App() {
 
         <AboutMatrizSection />
 
-        <LibrarySection
-          onSelectCodeForConsultant={handleSelectCodeForConsultant}
-        />
+        <BibliotecaVirtual />
 
         <PaymentGatewaySection />
 
@@ -86,13 +80,13 @@ export default function App() {
         <button
           onClick={handleOpenConsultant}
           className="group relative flex items-center gap-2.5 bg-[#0B132B] hover:bg-[#121B3B] text-white border border-[#D4AF37]/50 py-3 px-4 rounded-full shadow-2xl hover:shadow-amber-900/30 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
-          aria-label="Abrir Asesor Jurídico IA"
+          aria-label="Abrir Asesor Jurídico"
         >
           <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#D4AF37] to-amber-200 flex items-center justify-center text-[#0B132B] shadow-inner">
             <Bot className="w-4 h-4 text-[#0B132B]" />
           </div>
           <span className="text-xs font-bold tracking-wide hidden sm:inline pr-1">
-            Asesor IA AXON
+            Asesor AXON
           </span>
           <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-500 border-2 border-[#070B14] rounded-full" />
         </button>

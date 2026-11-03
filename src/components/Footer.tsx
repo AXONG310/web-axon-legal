@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-extrabold tracking-wider text-white">
-                  Axon<span className="text-[#D4AF37] ml-1">LEGAL</span>
+                  Axon<span className="text-[#D4AF37] ml-1">Legal</span>
                 </span>
                 <span className="text-[10px] tracking-widest text-slate-400 font-medium uppercase">
                   División de Axon Global TechS.A.S.
